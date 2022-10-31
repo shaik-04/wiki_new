@@ -1,0 +1,1819 @@
+<!--
+title: 2. RGM: Data Model
+description: 
+published: true
+date: 2022-07-19T09:52:36.851Z
+tags: 
+editor: undefined
+dateCreated: 2022-07-08T09:31:27.243Z
+-->
+
+<h1>Data Model</h1>
+<p>The data model demonstrates the relationships between the tables used by RGM.</p>
+<p>&nbsp;</p>
+<h1>Overview of the Data Model</h1>
+<h6><i>An overview into the dimensions and facts tables in RGM Data Model:</i></h6>
+<p>&nbsp;</p>
+<blockquote>
+  <h6><strong>Product</strong></h6>
+  <p><strong>Primary Key field name:</strong> Prod_ID</p>
+</blockquote>
+<blockquote>
+  <h6><strong>Customer</strong></h6>
+  <p><strong>Primary Key field name:</strong> Cust_ID</p>
+</blockquote>
+<blockquote>
+  <h6><strong>Promotion</strong></h6>
+  <p><strong>Primary Key field name: </strong>Promo_ID</p>
+</blockquote>
+<blockquote>
+  <h5><strong>Sell Out</strong></h5>
+  <p><strong>Foreign Key field name:</strong> <i>Prod_ID</i></p>
+  <p><strong>Foreign Key field name:</strong> Cust_ID</p>
+  <p><strong>Foreign Key field name:</strong> Promo_ID</p>
+  <p>&nbsp;</p>
+  <p><strong>Foreign Key reference:</strong> Product_Dim.Prod_ID</p>
+  <p><strong>Foreign Key reference:</strong> Customer_Dim.Cust_ID</p>
+  <p><strong>Foreign Key reference:</strong> Promo_Dim.Promo_ID</p>
+</blockquote>
+<blockquote>
+  <h6><strong>Sell In</strong></h6>
+  <p><strong>Foreign Key field name:</strong> Prod_ID</p>
+  <p><strong>Foreign Key field name:</strong> Promo_ID</p>
+  <p>&nbsp;</p>
+  <p><strong>Foreign Key reference:</strong> Product_Dim.Prod_ID</p>
+  <p><strong>Foreign Key reference:</strong> Promo_Dim.Promo_ID</p>
+</blockquote>
+<p>&nbsp;</p>
+<h1>Deep-Dive into the Tables</h1>
+<h6><i>A Detailed View into the dimensions and facts tables in SCCT Lite Data Model:</i></h6>
+<p>&nbsp;</p>
+<h6><i>Product</i></h6>
+<figure class="table" style="width:503.5pt;">
+  <table style="border-bottom:5px solid hsl(0, 0%, 0%);border-left:5px solid hsl(0, 0%, 0%);border-right:5px solid hsl(0, 0%, 0%);border-top:5px solid hsl(0, 0%, 0%);">
+    <thead>
+      <tr>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:106.75pt;">
+          <p style="text-align:center;"><strong>Column Name</strong></p>
+        </th>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:66.45pt;">
+          <p style="text-align:center;"><strong>Field Type</strong></p>
+        </th>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:127.5pt;">
+          <p style="text-align:center;"><strong>Key References</strong></p>
+        </th>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;"><strong>Data Type</strong></p>
+        </th>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:154.0pt;">
+          <p style="text-align:center;"><strong>Description</strong></p>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:106.75pt;">Prod_ID</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:66.45pt;">
+          <p style="text-align:center;">Primary Key</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:127.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:154.0pt;">
+          <p style="text-align:center;">Unique Identifier of Products</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:106.75pt;">Prod_desc</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:66.45pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:127.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:154.0pt;">
+          <p style="text-align:center;">Product Description</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:106.75pt;">Prod_L1_CD</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:66.45pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:127.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:154.0pt;">
+          <p style="text-align:center;">Product Root Code</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:106.75pt;">Prod_L1_Name</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:66.45pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:127.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:154.0pt;">
+          <p style="text-align:center;">Product Root Name</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:106.75pt;">Prod_L2_CD</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:66.45pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:127.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:154.0pt;">
+          <p style="text-align:center;">Product Category Code</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:106.75pt;">Prod_L2_Name</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:66.45pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:127.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:154.0pt;">
+          <p style="text-align:center;">Product Category Name</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:106.75pt;">Prod_L3_CD</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:66.45pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:127.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:154.0pt;">
+          <p style="text-align:center;">Product Subcategory Code</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:106.75pt;">Prod_L3_Name</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:66.45pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:127.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:154.0pt;">
+          <p style="text-align:center;">Product Subcategory Name</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:106.75pt;">Prod_L4_CD</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:66.45pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:127.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:154.0pt;">
+          <p style="text-align:center;">Product Variant Code</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:106.75pt;">Prod_L4_Name</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:66.45pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:127.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:154.0pt;">
+          <p style="text-align:center;">Product Variant Name</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:106.75pt;">Prod_L5_CD</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:66.45pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:127.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:154.0pt;">
+          <p style="text-align:center;">Product Brand Code</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:106.75pt;">Prod_L5_Name</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:66.45pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:127.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:154.0pt;">
+          <p style="text-align:center;">Product Brand Name</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:106.75pt;">Prod_L6_CD</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:66.45pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:127.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:154.0pt;">
+          <p style="text-align:center;">Product Reg Brand Code</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:106.75pt;">Prod_L6_Name</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:66.45pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:127.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:154.0pt;">
+          <p style="text-align:center;">Product Reg Brand Name</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:106.75pt;">Prod_L7_CD</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:66.45pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:127.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:154.0pt;">
+          <p style="text-align:center;">Product Brand Variant Code</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:106.75pt;">Prod_L7_Name</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:66.45pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:127.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:154.0pt;">
+          <p style="text-align:center;">Product Brand Variant Code</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:106.75pt;">Prod_L8_CD</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:66.45pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:127.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:154.0pt;">
+          <p style="text-align:center;">Product SKU Code</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:106.75pt;">Prod_L8_Name</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:66.45pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:127.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:154.0pt;">
+          <p style="text-align:center;">Product SKU Name</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:106.75pt;">Prod_L9_CD</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:66.45pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:127.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:154.0pt;">
+          <p style="text-align:center;">N/A</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:106.75pt;">Prod_L9_Name</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:66.45pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:127.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:154.0pt;">
+          <p style="text-align:center;">N/A</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:106.75pt;">Prod_L10_CD</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:66.45pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:127.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:154.0pt;">
+          <p style="text-align:center;">N/A</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:106.75pt;">Prod_L10_Name</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:66.45pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:127.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:154.0pt;">
+          <p style="text-align:center;">N/A</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:106.75pt;">Prod_Manufacturer</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:66.45pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:127.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:154.0pt;">
+          <p style="text-align:center;">Product Manufacturer</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:106.75pt;">Prod_Department</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:66.45pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:127.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:154.0pt;">
+          <p style="text-align:center;">Product Department</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:106.75pt;">Unit_of_Measure</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:66.45pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:127.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:154.0pt;">
+          <p style="text-align:center;">Unit of Measurement</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:106.75pt;">Pack_Size</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:66.45pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:127.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">float</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:154.0pt;">
+          <p style="text-align:center;">Size of the Pack</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+<p>&nbsp;</p>
+<h6>Customer</h6>
+<figure class="table" style="width:503.5pt;">
+  <table style="border-bottom:5px solid hsl(0, 0%, 0%);border-left:5px solid hsl(0, 0%, 0%);border-right:5px solid hsl(0, 0%, 0%);border-top:5px solid hsl(0, 0%, 0%);">
+    <thead>
+      <tr>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:106.7pt;">
+          <p style="text-align:center;"><strong>Column Name</strong></p>
+        </th>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:66.45pt;">
+          <p style="text-align:center;"><strong>Field Type</strong></p>
+        </th>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:127.55pt;">
+          <p style="text-align:center;"><strong>Key References</strong></p>
+        </th>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;"><strong>Data Type</strong></p>
+        </th>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:154.0pt;">
+          <p style="text-align:center;"><strong>Description</strong></p>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:106.7pt;">Cust_ID</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:66.45pt;">
+          <p style="text-align:center;">Primary Key</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:127.55pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:154.0pt;">
+          <p style="text-align:center;">Unique Identifier of Customers</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:106.7pt;">Cust_Name</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:66.45pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:127.55pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:154.0pt;">
+          <p style="text-align:center;">Customer Name</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:106.7pt;">Cust_L1_CD</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:66.45pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:127.55pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:154.0pt;">
+          <p style="text-align:center;">Customer Global Region Code</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:106.7pt;">Cust_L1_Name</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:66.45pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:127.55pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:154.0pt;">
+          <p style="text-align:center;">Customer Global Region Name</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:106.7pt;">Cust_L2_CD</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:66.45pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:127.55pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:154.0pt;">
+          <p style="text-align:center;">Customer Market Code</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:106.7pt;">Cust_L2_Name</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:66.45pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:127.55pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:154.0pt;">
+          <p style="text-align:center;">Customer Market Name</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:106.7pt;">Cust_L3_CD</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:66.45pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:127.55pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:154.0pt;">
+          <p style="text-align:center;">Customer Channel Code</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:106.7pt;">Cust_L3_Name</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:66.45pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:127.55pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:154.0pt;">
+          <p style="text-align:center;">Customer Channel Name</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:106.7pt;">Cust_L4_CD</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:66.45pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:127.55pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:154.0pt;">
+          <p style="text-align:center;">Customer Sub Channel Code</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:106.7pt;">Cust_L4_Name</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:66.45pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:127.55pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:154.0pt;">
+          <p style="text-align:center;">Customer Sub Channel Name</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:106.7pt;">Cust_L5_CD</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:66.45pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:127.55pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:154.0pt;">
+          <p style="text-align:center;">Customer Route Code</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:106.7pt;">Cust_L5_Name</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:66.45pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:127.55pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:154.0pt;">
+          <p style="text-align:center;">Customer Route Name</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:106.7pt;">Cust_L6_CD</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:66.45pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:127.55pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:154.0pt;">
+          <p style="text-align:center;">Customer Cluster Code</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:106.7pt;">Cust_L6_Name</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:66.45pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:127.55pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:154.0pt;">
+          <p style="text-align:center;">Customer Cluster Name</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:106.7pt;">Cust_L7_CD</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:66.45pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:127.55pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:154.0pt;">
+          <p style="text-align:center;">Customer Region Code</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:106.7pt;">Cust_L7_Name</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:66.45pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:127.55pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:154.0pt;">
+          <p style="text-align:center;">Customer Region Name</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:106.7pt;">Cust_L8_CD</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:66.45pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:127.55pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:154.0pt;">
+          <p style="text-align:center;">Customer State Code</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:106.7pt;">Cust_L8_Name</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:66.45pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:127.55pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:154.0pt;">
+          <p style="text-align:center;">Customer State Name</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:106.7pt;">Cust_L9_CD</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:66.45pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:127.55pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:154.0pt;">
+          <p style="text-align:center;">Customer District Code</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:106.7pt;">Cust_L9_Name</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:66.45pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:127.55pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:154.0pt;">
+          <p style="text-align:center;">Customer District Name</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:106.7pt;">Cust_L10_CD</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:66.45pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:127.55pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:154.0pt;">
+          <p style="text-align:center;">N/A</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:106.7pt;">Cust_L10_Name</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:66.45pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:127.55pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:154.0pt;">
+          <p style="text-align:center;">N/A</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:106.7pt;">Cust_Class_Name</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:66.45pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:127.55pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:154.0pt;">
+          <p style="text-align:center;">Class/Type the Customer belongs to</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:106.7pt;">Cust_Grp_Name</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:66.45pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:127.55pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:154.0pt;">
+          <p style="text-align:center;">Group/Banner the Customer belongs to</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:106.7pt;">Cust_Channel</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:66.45pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:127.55pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:154.0pt;">
+          <p style="text-align:center;">Channel/Dept the Customer belongs to</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:106.7pt;">Cust_Region</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:66.45pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:127.55pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:154.0pt;">
+          <p style="text-align:center;">Region the Customer belongs to</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:106.7pt;">Cust_State</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:66.45pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:127.55pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:154.0pt;">
+          <p style="text-align:center;">State the Customer belongs to</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:106.7pt;">Cust_City</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:66.45pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:127.55pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:154.0pt;">
+          <p style="text-align:center;">City the Customer belongs to</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+<p>&nbsp;</p>
+<h6>Promotion</h6>
+<figure class="table" style="width:503.5pt;">
+  <table style="border-bottom:5px solid hsl(0, 0%, 0%);border-left:5px solid hsl(0, 0%, 0%);border-right:5px solid hsl(0, 0%, 0%);border-top:5px solid hsl(0, 0%, 0%);">
+    <thead>
+      <tr>
+        <th style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:100.65pt;">
+          <p style="text-align:center;"><strong>Column Name</strong></p>
+        </th>
+        <th style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:62.0pt;">
+          <p style="text-align:center;"><strong>Field Type</strong></p>
+        </th>
+        <th style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:149.9pt;">
+          <p style="text-align:center;"><strong>Key References</strong></p>
+        </th>
+        <th style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:48.8pt;">
+          <p style="text-align:center;"><strong>Data Type</strong></p>
+        </th>
+        <th style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:142.15pt;">
+          <p style="text-align:center;"><strong>Description</strong></p>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:100.65pt;">Promo_ID</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:62.0pt;">
+          <p style="text-align:center;">Primary Key</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:149.9pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:142.15pt;">
+          <p style="text-align:center;">Unique Identifier of Promotions</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:100.65pt;">Promo_Name</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:62.0pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:149.9pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:142.15pt;">
+          <p style="text-align:center;">Promotion Name</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:100.65pt;">Promo_Desc</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:62.0pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:149.9pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:142.15pt;">
+          <p style="text-align:center;">Promotion Description</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:100.65pt;">Promo_Type</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:62.0pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:149.9pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:142.15pt;">
+          <p style="text-align:center;">Promotion Type</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:100.65pt;">Promo_Channel</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:62.0pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:149.9pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:142.15pt;">
+          <p style="text-align:center;">Promotion Channel</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:100.65pt;">Cash_Discount</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:62.0pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:149.9pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:48.8pt;">
+          <p style="text-align:center;">float</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:142.15pt;">
+          <p style="text-align:center;">Cash Discount in US$</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:100.65pt;">Promo_Start_Dt</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:62.0pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:149.9pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:48.8pt;">
+          <p style="text-align:center;">date</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:142.15pt;">
+          <p style="text-align:center;">Promotion Start Date</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:100.65pt;">Promo_End_Dt</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:62.0pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:149.9pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:48.8pt;">
+          <p style="text-align:center;">date</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:142.15pt;">
+          <p style="text-align:center;">Promotion End Date</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:100.65pt;">Promo_Budget</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:62.0pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:149.9pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:48.8pt;">
+          <p style="text-align:center;">float</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:142.15pt;">
+          <p style="text-align:center;">Budget of the Promotion</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:100.65pt;">Discount_Rate</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:62.0pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:149.9pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:48.8pt;">
+          <p style="text-align:center;">float</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:142.15pt;">
+          <p style="text-align:center;">Discount Rate in US$</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+<p>&nbsp;</p>
+<h6>Sell Out</h6>
+<figure class="table" style="width:503.5pt;">
+  <table style="border-bottom:5px solid hsl(0, 0%, 0%);border-left:5px solid hsl(0, 0%, 0%);border-right:5px solid hsl(0, 0%, 0%);border-top:5px solid hsl(0, 0%, 0%);">
+    <thead>
+      <tr>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:118.95pt;">
+          <p style="text-align:center;"><strong>Column Name</strong></p>
+        </th>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:64.35pt;">
+          <p style="text-align:center;"><strong>Field Type</strong></p>
+        </th>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:125.85pt;">
+          <p style="text-align:center;"><strong>Key References</strong></p>
+        </th>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;"><strong>Data Type</strong></p>
+        </th>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:145.55pt;">
+          <p style="text-align:center;"><strong>Description</strong></p>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:118.95pt;">Prod_ID</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:64.35pt;">
+          <p style="text-align:center;">Foreign Key</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:125.85pt;">
+          <p style="text-align:center;">Product_Dim.Prod_ID</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:145.55pt;">
+          <p style="text-align:center;">Unique Identifier of Products</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:118.95pt;">Cust_ID</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:64.35pt;">
+          <p style="text-align:center;">Foreign Key</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:125.85pt;">
+          <p style="text-align:center;">Customer_Dim.Cust_ID</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:145.55pt;">
+          <p style="text-align:center;">Unique Identifier of Customers</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:118.95pt;">Promo_ID</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:64.35pt;">
+          <p style="text-align:center;">Foreign Key</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:125.85pt;">
+          <p style="text-align:center;">Promo_Dim.Promo_ID</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:145.55pt;">
+          <p style="text-align:center;">Unique Identifier of Promotions</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:118.95pt;">Invoice_Date</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:64.35pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:125.85pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">date</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:145.55pt;">
+          <p style="text-align:center;">Invoice Date</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:118.95pt;">Invoice_Num</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:64.35pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:125.85pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:145.55pt;">
+          <p style="text-align:center;">Invoice Number</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:118.95pt;">Delivery_Date</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:64.35pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:125.85pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">date</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:145.55pt;">
+          <p style="text-align:center;">Delivery Date</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:118.95pt;">Delivery_Status</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:64.35pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:125.85pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:145.55pt;">
+          <p style="text-align:center;">Status of Delivery</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:118.95pt;">Sales_Volume</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:64.35pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:125.85pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">float</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:145.55pt;">
+          <p style="text-align:center;">Sales Volume</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:118.95pt;">Invoice_Qty_in_KG</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:64.35pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:125.85pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">float</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:145.55pt;">
+          <p style="text-align:center;">Invoice Weight</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:118.95pt;">Promo_Price</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:64.35pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:125.85pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">float</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:145.55pt;">
+          <p style="text-align:center;">Promotional Price</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:118.95pt;">EDV_Price</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:64.35pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:125.85pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">float</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:145.55pt;">
+          <p style="text-align:center;">Everyday Value Price</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:118.95pt;">Net_Amt</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:64.35pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:125.85pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">float</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:145.55pt;">
+          <p style="text-align:center;">Net Amount</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:118.95pt;">Gross_Amt</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:64.35pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:125.85pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">float</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:145.55pt;">
+          <p style="text-align:center;">Gross Amount</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:118.95pt;">Offer_Qty</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:64.35pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:125.85pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">float</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:145.55pt;">
+          <p style="text-align:center;">Offer Quantity</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:118.95pt;">Order_Qty</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:64.35pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:125.85pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">float</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:145.55pt;">
+          <p style="text-align:center;">Order Quantity</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:118.95pt;">Qty_Units</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:64.35pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:125.85pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">float</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:145.55pt;">
+          <p style="text-align:center;">Number of units</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:118.95pt;">Scheme_Code</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:64.35pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:125.85pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">float</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:145.55pt;">
+          <p style="text-align:center;">Scheme Code</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:118.95pt;">Scheme_Discount</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:64.35pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:125.85pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">float</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:145.55pt;">
+          <p style="text-align:center;">Scheme Discount obtained</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:118.95pt;">Distributor_Discount</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:64.35pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:125.85pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">float</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:145.55pt;">
+          <p style="text-align:center;">Discount given by distributor</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:118.95pt;">Distributor_Discount_Perc</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:64.35pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:125.85pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">float</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:145.55pt;">
+          <p style="text-align:center;">Discount % given by distributor</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:118.95pt;">Invoice_Discount_Amt</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:64.35pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:125.85pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">float</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:145.55pt;">
+          <p style="text-align:center;">Total Discount Amount</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:118.95pt;">Cash_Discount</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:64.35pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:125.85pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">float</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:145.55pt;">
+          <p style="text-align:center;">Total Cash Discount</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:118.95pt;">Free_Qty</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:64.35pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:125.85pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">float</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:145.55pt;">
+          <p style="text-align:center;">Number of Free Units</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:118.95pt;">Promo_Flag</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:64.35pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:125.85pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:145.55pt;">
+          <p style="text-align:center;">Flag describing if Promotion is applied</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:118.95pt;">Promo_Name</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:64.35pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:125.85pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:145.55pt;">
+          <p style="text-align:center;">Promotion Name</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+<p>&nbsp;</p>
+<h6>Sell In</h6>
+<figure class="table" style="width:503.5pt;">
+  <table style="border-bottom:5px none hsl(0, 0%, 0%);border-left:5px none hsl(0, 0%, 0%);border-right:5px none hsl(0, 0%, 0%);border-top:5px none hsl(0, 0%, 0%);">
+    <thead>
+      <tr>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:1.65in;">
+          <p style="text-align:center;"><strong>Column Name</strong></p>
+        </th>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:64.35pt;">
+          <p style="text-align:center;"><strong>Field Type</strong></p>
+        </th>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:125.85pt;">
+          <p style="text-align:center;"><strong>Key References</strong></p>
+        </th>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;"><strong>Data Type</strong></p>
+        </th>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:145.7pt;">
+          <p style="text-align:center;"><strong>Description</strong></p>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:1.65in;">Prod_ID</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:64.35pt;">
+          <p style="text-align:center;">Foreign Key</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:125.85pt;">
+          <p style="text-align:center;">Product_Dim.Prod_ID</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:145.7pt;">
+          <p style="text-align:center;">Unique Identifier of Products</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:1.65in;">Promo_ID</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:64.35pt;">
+          <p style="text-align:center;">Foreign Key</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:125.85pt;">
+          <p style="text-align:center;">Promo_Dim.Promo_ID</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:145.7pt;">
+          <p style="text-align:center;">Unique Identifier of Promotions</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:1.65in;">Bill_To_Customer</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:64.35pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:125.85pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:145.7pt;">
+          <p style="text-align:center;">Bill Number</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:1.65in;">SalesRep_ID</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:64.35pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:125.85pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:145.7pt;">
+          <p style="text-align:center;">Sales Representative ID</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:1.65in;">Invoice_Date</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:64.35pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:125.85pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">date</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:145.7pt;">
+          <p style="text-align:center;">Invoice Date</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:1.65in;">Invoice_Num</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:64.35pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:125.85pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:145.7pt;">
+          <p style="text-align:center;">Invoice Number</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:1.65in;">Sales_Order_Num</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:64.35pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:125.85pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:145.7pt;">
+          <p style="text-align:center;">Sales Order Number</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:1.65in;">Transaction_Type</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:64.35pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:125.85pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:145.7pt;">
+          <p style="text-align:center;">Transaction Type</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:1.65in;">Warehouse_CD</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:64.35pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:125.85pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:145.7pt;">
+          <p style="text-align:center;">Warehouse CD</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:1.65in;">Ship_To_Customer</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:64.35pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:125.85pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:145.7pt;">
+          <p style="text-align:center;">Type of Shipment</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:1.65in;">Delivery_Date</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:64.35pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:125.85pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">Date</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:145.7pt;">
+          <p style="text-align:center;">Delivery Date</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:1.65in;">Gross_Sales_Value</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:64.35pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:125.85pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">float</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:145.7pt;">
+          <p style="text-align:center;">Gross Sales Value</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:1.65in;">Cost_of_goods_sold</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:64.35pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:125.85pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">float</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:145.7pt;">
+          <p style="text-align:center;">Internal Manufacturer Cost</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:1.65in;">Base_Price</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:64.35pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:125.85pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">float</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:145.7pt;">
+          <p style="text-align:center;">Sell in Price per Unit</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:1.65in;">Tax_Value</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:64.35pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:125.85pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">float</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:145.7pt;">
+          <p style="text-align:center;">Tax Value</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:1.65in;">Discount_Value</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:64.35pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:125.85pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">float</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:145.7pt;">
+          <p style="text-align:center;">Total Discount</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:1.65in;">Net_Sales_Value</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:64.35pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:125.85pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">float</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:145.7pt;">
+          <p style="text-align:center;">Gross sales value - (Tax value + discount value)</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:1.65in;">Gross_Profit_Value</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:64.35pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:125.85pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">float</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:145.7pt;">
+          <p style="text-align:center;">Net Sales Value – COGS</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:1.65in;">Order_Qty</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:64.35pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:125.85pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">float</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:145.7pt;">
+          <p style="text-align:center;">Order Quantity</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:1.65in;">Order_unit_of_measure</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:64.35pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:125.85pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:48.8pt;">
+          <p style="text-align:center;">float</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:145.7pt;">
+          <p style="text-align:center;">Unit of Measurement</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>

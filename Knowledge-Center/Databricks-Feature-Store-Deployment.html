@@ -1,0 +1,57 @@
+<!--
+title: Databricks Feature Store Deployment
+description: 
+published: true
+date: 2022-10-28T13:31:31.169Z
+tags: atom
+editor: ckeditor
+dateCreated: 2022-10-28T13:31:31.169Z
+-->
+
+<p>&nbsp;</p>
+<figure class="image"><img src="/atom/picture1.svg"></figure>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span class="text-big"><strong>User Documentation</strong></span></p>
+<h1>Databricks Feature Store Deployment</h1>
+<p><span class="text-big"><strong>Atom.AI</strong></span></p>
+<figure class="image"><img src="/atom/common_photos.png"></figure>
+<p>&nbsp;</p>
+<p>Databricks feature store pipeline allow user to register Databricks feature store based on the selected solution in the Atom.ai canvas.</p>
+<h3>Deploy azure Databricks workspace</h3>
+<figure class="image"><img src="/atom/databricks_feature_store_deployment/1.png"></figure>
+<p>Select premium tier and after successful deployment go to the workspace and create a cluster. During cluster creation select the configuration shown in the image.</p>
+<figure class="image"><img src="/atom/databricks_feature_store_deployment/2.png"></figure>
+<p>Use 11.1 ML (includes Apache Spark 3.3.0, Scala 2.12) as&nbsp; Databricks Runtime Version, min workers as 1, max workers as 2, and cluster time out as 15 min.</p>
+<p>After successful workspace and cluster creation. Please note down the following values:&nbsp;</p>
+<ol>
+  <li>workspace URL&nbsp;</li>
+  <li>cluster ID&nbsp;</li>
+  <li>workspace ID.</li>
+</ol>
+<figure class="image"><img src="/atom/databricks_feature_store_deployment/3.png"></figure>
+<p>&nbsp;</p>
+<h3><strong>For making it feature store&nbsp; the following pipeline should be run with the variables changes</strong></h3>
+<p>Pipeline URL :&nbsp;<a href="https://dev.azure.com/Studio-Org/Deployment-Studio/_build?definitionId=751">https://dev.azure.com/Studio-Org/Deployment-Studio/_build?definitionId=751</a></p>
+<p>Repo URL:&nbsp;<a href="https://dev.azure.com/Studio-Org/Deployment-Studio/_git/infra_test_dbx-fs-pipeline?version=GBmain&amp;path=/README.md&amp;_a=preview">https://dev.azure.com/Studio-Org/Deployment-Studio/_git/infra_test_dbx-fs-pipeline?version=GBmain&amp;path=/README.md&amp;_a=preview</a></p>
+<p>Variables that should be changed</p>
+<p>DBX specific pipeline variables</p>
+<p>$(cluster-id)&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Databricks cluster id&nbsp;</p>
+<p>$(databricks-host)&nbsp; &nbsp; &nbsp; &nbsp;: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Databricks host endpoint</p>
+<p>$(databricks-token)&nbsp; &nbsp; &nbsp;: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Databricks PAT token</p>
+<p>$(databricks-workspace-id) : &nbsp; &nbsp; Databricks workspace ID</p>
+<p>Choose a storage account to dump your features and add them as variables in pipeline</p>
+<p>ADLS specific pipeline variables</p>
+<p>$(container-name)&nbsp; &nbsp; &nbsp; &nbsp;: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ADLS container name</p>
+<p>$(storage-account-name) : &nbsp; &nbsp; &nbsp; &nbsp; ADLS storage account name</p>
+<p>$(storage-key)&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;ADLS storage account secret key</p>
+<p>Feature store specific pipeline parameters (not required to change)</p>
+<p>$(fs-scope): &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Feature store scope</p>
+<p>$(fs-key): &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Feature store key</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Thank you</strong></p>
+<hr>
+<figure class="image"><img src="/atom/discover_atom/31.png"></figure>

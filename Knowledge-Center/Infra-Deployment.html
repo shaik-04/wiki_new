@@ -1,0 +1,448 @@
+<!--
+title: Infra Deployment
+description: 
+published: true
+date: 2022-10-21T13:20:10.491Z
+tags: 
+editor: undefined
+dateCreated: 2022-10-21T06:34:15.850Z
+-->
+
+<p style="text-align:justify;">&nbsp;</p>
+<figure class="image"><img src="/atom/picture1.svg"></figure>
+<p style="text-align:justify;">&nbsp;</p>
+<p style="text-align:justify;">&nbsp;</p>
+<p><span class="text-big"><strong>User Documentation</strong></span></p>
+<h1>Infra Deployment</h1>
+<p><span class="text-big"><strong>Atom.AI</strong></span></p>
+<figure class="image"><img src="/atom/common_photos.png"></figure>
+<p><strong>Document Details:</strong></p>
+<figure class="table">
+  <table style="border-bottom:none;border-left:none;border-right:none;border-top:none;">
+    <tbody>
+      <tr>
+        <td style="background-color:#C4DAEE;border-bottom:1.0pt solid windowtext;border-left:1.0pt solid windowtext;border-right:1.0pt solid windowtext;border-top:1.0pt solid windowtext;height:.15in;padding:0in 5.4pt;vertical-align:top;width:121.25pt;"><strong>Document Name</strong></td>
+        <td style="background-color:#C4DAEE;border-bottom:1.0pt solid windowtext;border-left:1.0pt none windowtext;border-right:1.0pt solid windowtext;border-top:1.0pt solid windowtext;height:.15in;padding:0in 5.4pt;vertical-align:top;width:374.45pt;"><strong>Atom AI project setup&nbsp;</strong></td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid windowtext;border-left:1.0pt solid windowtext;border-right:1.0pt solid windowtext;border-top:1.0pt none windowtext;height:8.75pt;padding:0in 5.4pt;vertical-align:top;width:121.25pt;">&nbsp;</td>
+        <td style="border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:8.75pt;padding:0in 5.4pt;vertical-align:top;width:374.45pt;">&nbsp;</td>
+      </tr>
+      <tr>
+        <td style="background-color:#C4DAEE;border-bottom:1.0pt solid windowtext;border-left:1.0pt solid windowtext;border-right:1.0pt solid windowtext;border-top:1.0pt none windowtext;height:9.45pt;padding:0in 5.4pt;vertical-align:top;width:121.25pt;"><strong>Document Number</strong></td>
+        <td style="background-color:#C4DAEE;border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:9.45pt;padding:0in 5.4pt;vertical-align:top;width:374.45pt;"><strong>1</strong></td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid windowtext;border-left:1.0pt solid windowtext;border-right:1.0pt solid windowtext;border-top:1.0pt none windowtext;height:10.15pt;padding:0in 5.4pt;vertical-align:top;width:121.25pt;">&nbsp;</td>
+        <td style="border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:10.15pt;padding:0in 5.4pt;vertical-align:top;width:374.45pt;">&nbsp;</td>
+      </tr>
+      <tr>
+        <td style="background-color:#C4DAEE;border-bottom:1.0pt solid windowtext;border-left:1.0pt solid windowtext;border-right:1.0pt solid windowtext;border-top:1.0pt none windowtext;height:5.05pt;padding:0in 5.4pt;vertical-align:top;width:121.25pt;"><strong>Document Owner</strong></td>
+        <td style="background-color:#C4DAEE;border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:5.05pt;padding:0in 5.4pt;vertical-align:top;width:374.45pt;"><strong>Atom Infra team - </strong>shaik.jahangir@tredence.com</td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid windowtext;border-left:1.0pt solid windowtext;border-right:1.0pt solid windowtext;border-top:1.0pt none windowtext;height:4.45pt;padding:0in 5.4pt;vertical-align:top;width:121.25pt;">&nbsp;</td>
+        <td style="border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:4.45pt;padding:0in 5.4pt;vertical-align:top;width:374.45pt;">&nbsp;</td>
+      </tr>
+      <tr>
+        <td style="background-color:#C4DAEE;border-bottom:1.0pt solid windowtext;border-left:1.0pt solid windowtext;border-right:1.0pt solid windowtext;border-top:1.0pt none windowtext;height:4.45pt;padding:0in 5.4pt;vertical-align:top;width:121.25pt;"><strong>Distribution List</strong></td>
+        <td style="background-color:#C4DAEE;border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:4.45pt;padding:0in 5.4pt;vertical-align:top;width:374.45pt;">&nbsp;</td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+<p style="text-align:justify;">&nbsp;</p>
+<p><strong>Change Control:</strong></p>
+<figure class="table" style="width:92.54%;">
+  <table style="border-bottom:none;border-left:none;border-right:none;border-top:none;">
+    <tbody>
+      <tr>
+        <td style="background-color:#C4DAEE;border-bottom:1.0pt solid windowtext;border-left:1.0pt solid windowtext;border-right:1.0pt solid windowtext;border-top:1.0pt solid windowtext;height:.15in;padding:0in 5.4pt;vertical-align:top;width:18.18%;"><strong>Version</strong></td>
+        <td style="background-color:#C4DAEE;border-bottom:1.0pt solid windowtext;border-left:1.0pt none windowtext;border-right:1.0pt solid windowtext;border-top:1.0pt solid windowtext;height:.15in;padding:0in 5.4pt;vertical-align:top;width:14.58%;"><strong>Release Date</strong></td>
+        <td style="background-color:#C4DAEE;border-bottom:1.0pt solid windowtext;border-left:1.0pt none windowtext;border-right:1.0pt solid windowtext;border-top:1.0pt solid windowtext;height:.15in;padding:0in 5.4pt;vertical-align:top;width:21.14%;"><strong>Author</strong></td>
+        <td style="background-color:#C4DAEE;border-bottom:1.0pt solid windowtext;border-left:1.0pt none windowtext;border-right:1.0pt solid windowtext;border-top:1.0pt solid windowtext;height:.15in;padding:0in 5.4pt;vertical-align:top;width:15.46%;"><strong>Reviewer</strong></td>
+        <td style="background-color:#C4DAEE;border-bottom:1.0pt solid windowtext;border-left:1.0pt none windowtext;border-right:1.0pt solid windowtext;border-top:1.0pt solid windowtext;height:.15in;padding:0in 5.4pt;vertical-align:top;width:16.22%;"><strong>Approver</strong></td>
+        <td style="background-color:#C4DAEE;border-bottom:1.0pt solid windowtext;border-left:1.0pt none windowtext;border-right:1.0pt solid windowtext;border-top:1.0pt solid windowtext;height:.15in;padding:0in 5.4pt;vertical-align:top;width:14.42%;"><strong>Change History</strong></td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid windowtext;border-left:1.0pt solid windowtext;border-right:1.0pt solid windowtext;border-top:1.0pt none windowtext;height:8.75pt;padding:0in 5.4pt;vertical-align:top;width:18.18%;"><strong>1.0</strong></td>
+        <td style="border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:8.75pt;padding:0in 5.4pt;vertical-align:top;width:14.58%;"><strong>02-09-2022</strong></td>
+        <td style="border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:8.75pt;padding:0in 5.4pt;vertical-align:top;width:21.14%;">shaik.jahangir@tredence.com</td>
+        <td style="border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:8.75pt;padding:0in 5.4pt;vertical-align:top;width:15.46%;">&nbsp;chinmaya.jena@tredence.com</td>
+        <td style="border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:8.75pt;padding:0in 5.4pt;vertical-align:top;width:16.22%;">bhairab.singh@tredence.com</td>
+        <td style="border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:8.75pt;padding:0in 5.4pt;vertical-align:top;width:14.42%;">&nbsp;</td>
+      </tr>
+      <tr>
+        <td style="background-color:#C4DAEE;border-bottom:1.0pt solid windowtext;border-left:1.0pt solid windowtext;border-right:1.0pt solid windowtext;border-top:1.0pt none windowtext;height:9.45pt;padding:0in 5.4pt;vertical-align:top;width:18.18%;">&nbsp;</td>
+        <td style="background-color:#C4DAEE;border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:9.45pt;padding:0in 5.4pt;vertical-align:top;width:14.58%;">&nbsp;</td>
+        <td style="background-color:#C4DAEE;border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:9.45pt;padding:0in 5.4pt;vertical-align:top;width:21.14%;">&nbsp;</td>
+        <td style="background-color:#C4DAEE;border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:9.45pt;padding:0in 5.4pt;vertical-align:top;width:15.46%;">&nbsp;</td>
+        <td style="background-color:#C4DAEE;border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:9.45pt;padding:0in 5.4pt;vertical-align:top;width:16.22%;">&nbsp;</td>
+        <td style="background-color:#C4DAEE;border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:9.45pt;padding:0in 5.4pt;vertical-align:top;width:14.42%;">&nbsp;</td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid windowtext;border-left:1.0pt solid windowtext;border-right:1.0pt solid windowtext;border-top:1.0pt none windowtext;height:10.15pt;padding:0in 5.4pt;vertical-align:top;width:18.18%;">&nbsp;</td>
+        <td style="border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:10.15pt;padding:0in 5.4pt;vertical-align:top;width:14.58%;">&nbsp;</td>
+        <td style="border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:10.15pt;padding:0in 5.4pt;vertical-align:top;width:21.14%;">&nbsp;</td>
+        <td style="border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:10.15pt;padding:0in 5.4pt;vertical-align:top;width:15.46%;">&nbsp;</td>
+        <td style="border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:10.15pt;padding:0in 5.4pt;vertical-align:top;width:16.22%;">&nbsp;</td>
+        <td style="border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:10.15pt;padding:0in 5.4pt;vertical-align:top;width:14.42%;">&nbsp;</td>
+      </tr>
+      <tr>
+        <td style="background-color:#C4DAEE;border-bottom:1.0pt solid windowtext;border-left:1.0pt solid windowtext;border-right:1.0pt solid windowtext;border-top:1.0pt none windowtext;height:5.05pt;padding:0in 5.4pt;vertical-align:top;width:18.18%;">&nbsp;</td>
+        <td style="background-color:#C4DAEE;border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:5.05pt;padding:0in 5.4pt;vertical-align:top;width:14.58%;">&nbsp;</td>
+        <td style="background-color:#C4DAEE;border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:5.05pt;padding:0in 5.4pt;vertical-align:top;width:21.14%;">&nbsp;</td>
+        <td style="background-color:#C4DAEE;border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:5.05pt;padding:0in 5.4pt;vertical-align:top;width:15.46%;">&nbsp;</td>
+        <td style="background-color:#C4DAEE;border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:5.05pt;padding:0in 5.4pt;vertical-align:top;width:16.22%;">&nbsp;</td>
+        <td style="background-color:#C4DAEE;border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:5.05pt;padding:0in 5.4pt;vertical-align:top;width:14.42%;">&nbsp;</td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid windowtext;border-left:1.0pt solid windowtext;border-right:1.0pt solid windowtext;border-top:1.0pt none windowtext;height:4.45pt;padding:0in 5.4pt;vertical-align:top;width:18.18%;">&nbsp;</td>
+        <td style="border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:4.45pt;padding:0in 5.4pt;vertical-align:top;width:14.58%;">&nbsp;</td>
+        <td style="border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:4.45pt;padding:0in 5.4pt;vertical-align:top;width:21.14%;">&nbsp;</td>
+        <td style="border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:4.45pt;padding:0in 5.4pt;vertical-align:top;width:15.46%;">&nbsp;</td>
+        <td style="border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:4.45pt;padding:0in 5.4pt;vertical-align:top;width:16.22%;">&nbsp;</td>
+        <td style="border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:4.45pt;padding:0in 5.4pt;vertical-align:top;width:14.42%;">&nbsp;</td>
+      </tr>
+      <tr>
+        <td style="background-color:#C4DAEE;border-bottom:1.0pt solid windowtext;border-left:1.0pt solid windowtext;border-right:1.0pt solid windowtext;border-top:1.0pt none windowtext;height:4.45pt;padding:0in 5.4pt;vertical-align:top;width:18.18%;">&nbsp;</td>
+        <td style="background-color:#C4DAEE;border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:4.45pt;padding:0in 5.4pt;vertical-align:top;width:14.58%;">&nbsp;</td>
+        <td style="background-color:#C4DAEE;border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:4.45pt;padding:0in 5.4pt;vertical-align:top;width:21.14%;">&nbsp;</td>
+        <td style="background-color:#C4DAEE;border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:4.45pt;padding:0in 5.4pt;vertical-align:top;width:15.46%;">&nbsp;</td>
+        <td style="background-color:#C4DAEE;border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:4.45pt;padding:0in 5.4pt;vertical-align:top;width:16.22%;">&nbsp;</td>
+        <td style="background-color:#C4DAEE;border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:4.45pt;padding:0in 5.4pt;vertical-align:top;width:14.42%;">&nbsp;</td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+<p><strong>Annual Review:</strong></p>
+<figure class="table">
+  <table style="border-bottom:none;border-left:none;border-right:none;border-top:none;">
+    <tbody>
+      <tr>
+        <td style="background-color:#C4DAEE;border-bottom:1.0pt solid windowtext;border-left:1.0pt solid windowtext;border-right:1.0pt solid windowtext;border-top:1.0pt solid windowtext;height:.15in;padding:0in 5.4pt;vertical-align:top;width:103.3pt;"><strong>Date of Review</strong></td>
+        <td style="background-color:#C4DAEE;border-bottom:1.0pt solid windowtext;border-left:1.0pt none windowtext;border-right:1.0pt solid windowtext;border-top:1.0pt solid windowtext;height:.15in;padding:0in 5.4pt;vertical-align:top;width:77.3pt;"><strong>Version Reviewed</strong></td>
+        <td style="background-color:#C4DAEE;border-bottom:1.0pt solid windowtext;border-left:1.0pt none windowtext;border-right:1.0pt solid windowtext;border-top:1.0pt solid windowtext;height:.15in;padding:0in 5.4pt;vertical-align:top;width:67.25pt;"><strong>New Version</strong></td>
+        <td style="background-color:#C4DAEE;border-bottom:1.0pt solid windowtext;border-left:1.0pt none windowtext;border-right:1.0pt solid windowtext;border-top:1.0pt solid windowtext;height:.15in;padding:0in 5.4pt;vertical-align:top;width:142.2pt;"><strong>Reviewer</strong></td>
+        <td style="background-color:#C4DAEE;border-bottom:1.0pt solid windowtext;border-left:1.0pt none windowtext;border-right:1.0pt solid windowtext;border-top:1.0pt solid windowtext;height:.15in;padding:0in 5.4pt;vertical-align:top;width:105.65pt;"><strong>Approver</strong></td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid windowtext;border-left:1.0pt solid windowtext;border-right:1.0pt solid windowtext;border-top:1.0pt none windowtext;height:8.75pt;padding:0in 5.4pt;vertical-align:top;width:103.3pt;">&nbsp;</td>
+        <td style="border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:8.75pt;padding:0in 5.4pt;vertical-align:top;width:77.3pt;">&nbsp;</td>
+        <td style="border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:8.75pt;padding:0in 5.4pt;vertical-align:top;width:67.25pt;">&nbsp;</td>
+        <td style="border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:8.75pt;padding:0in 5.4pt;vertical-align:top;width:142.2pt;">&nbsp;</td>
+        <td style="border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:8.75pt;padding:0in 5.4pt;vertical-align:top;width:105.65pt;">&nbsp;</td>
+      </tr>
+      <tr>
+        <td style="background-color:#C4DAEE;border-bottom:1.0pt solid windowtext;border-left:1.0pt solid windowtext;border-right:1.0pt solid windowtext;border-top:1.0pt none windowtext;height:9.45pt;padding:0in 5.4pt;vertical-align:top;width:103.3pt;">&nbsp;</td>
+        <td style="background-color:#C4DAEE;border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:9.45pt;padding:0in 5.4pt;vertical-align:top;width:77.3pt;">&nbsp;</td>
+        <td style="background-color:#C4DAEE;border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:9.45pt;padding:0in 5.4pt;vertical-align:top;width:67.25pt;">&nbsp;</td>
+        <td style="background-color:#C4DAEE;border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:9.45pt;padding:0in 5.4pt;vertical-align:top;width:142.2pt;">&nbsp;</td>
+        <td style="background-color:#C4DAEE;border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:9.45pt;padding:0in 5.4pt;vertical-align:top;width:105.65pt;">&nbsp;</td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid windowtext;border-left:1.0pt solid windowtext;border-right:1.0pt solid windowtext;border-top:1.0pt none windowtext;height:10.15pt;padding:0in 5.4pt;vertical-align:top;width:103.3pt;">&nbsp;</td>
+        <td style="border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:10.15pt;padding:0in 5.4pt;vertical-align:top;width:77.3pt;">&nbsp;</td>
+        <td style="border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:10.15pt;padding:0in 5.4pt;vertical-align:top;width:67.25pt;">&nbsp;</td>
+        <td style="border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:10.15pt;padding:0in 5.4pt;vertical-align:top;width:142.2pt;">&nbsp;</td>
+        <td style="border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:10.15pt;padding:0in 5.4pt;vertical-align:top;width:105.65pt;">&nbsp;</td>
+      </tr>
+      <tr>
+        <td style="background-color:#C4DAEE;border-bottom:1.0pt solid windowtext;border-left:1.0pt solid windowtext;border-right:1.0pt solid windowtext;border-top:1.0pt none windowtext;height:4.45pt;padding:0in 5.4pt;vertical-align:top;width:103.3pt;">&nbsp;</td>
+        <td style="background-color:#C4DAEE;border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:4.45pt;padding:0in 5.4pt;vertical-align:top;width:77.3pt;">&nbsp;</td>
+        <td style="background-color:#C4DAEE;border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:4.45pt;padding:0in 5.4pt;vertical-align:top;width:67.25pt;">&nbsp;</td>
+        <td style="background-color:#C4DAEE;border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:4.45pt;padding:0in 5.4pt;vertical-align:top;width:142.2pt;">&nbsp;</td>
+        <td style="background-color:#C4DAEE;border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:4.45pt;padding:0in 5.4pt;vertical-align:top;width:105.65pt;">&nbsp;</td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+<p style="text-align:justify;">&nbsp;</p>
+<h2><strong>Introduction&nbsp;</strong></h2>
+<p>This document will help to setup infrastructure for Atom AI Project in Azure Platform.</p>
+<p><strong><u>Atom Infra Diagram</u></strong></p>
+<figure class="image"><img src="/atom/infra_deployment/picture1.png"></figure>
+<p>&nbsp;</p>
+<h2><strong>Purpose</strong></h2>
+<p>This document helps defining standard operation procedure to&nbsp;Creation and configuration of Atom AI project setup in Internal as well as Production environments.</p>
+<p>&nbsp;</p>
+<h2><strong>Scope</strong></h2>
+<p>We will learn about the creation and configuration of Atom AI Project set up in Azure Environment.&nbsp;</p>
+<p>&nbsp;</p>
+<h2><strong>Assumptions and Pre-requisites /Constraints</strong></h2>
+<p>Authorized access to create Resources in Azure DevOps &amp; Portal for Atom AI project</p>
+<p>&nbsp;</p>
+<h2><strong>Work Tasks</strong></h2>
+<figure class="table">
+  <table style="border-bottom:none;border-left:none;border-right:none;border-top:none;">
+    <tbody>
+      <tr>
+        <td style="border-bottom:1.0pt solid windowtext;border-left:1.0pt solid windowtext;border-right:1.0pt solid windowtext;border-top:1.0pt solid windowtext;height:15.0pt;padding:0in 5.4pt;vertical-align:top;width:47.35pt;"><strong>S.no</strong></td>
+        <td style="border-bottom:1.0pt solid windowtext;border-left:1.0pt none windowtext;border-right:1.0pt solid windowtext;border-top:1.0pt solid windowtext;height:15.0pt;padding:0in 5.4pt;vertical-align:top;width:492.65pt;"><strong>Task</strong></td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid windowtext;border-left:1.0pt solid windowtext;border-right:1.0pt solid windowtext;border-top:1.0pt none windowtext;height:15.0pt;padding:0in 5.4pt;vertical-align:top;width:47.35pt;">1</td>
+        <td style="border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:15.0pt;padding:0in 5.4pt;vertical-align:top;width:492.65pt;">Creation of Subscription and create master service principle (atomai-deployment-master-sp)for automatic deployment of full stack</td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid windowtext;border-left:1.0pt solid windowtext;border-right:1.0pt solid windowtext;border-top:1.0pt none windowtext;height:15.0pt;padding:0in 5.4pt;vertical-align:top;width:47.35pt;">2</td>
+        <td style="border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:15.0pt;padding:0in 5.4pt;vertical-align:top;width:492.65pt;">Create a&nbsp; custom role in Azure IAM (Atomai-UserAccess-CustomRole) and Assign custom role and Contributor role to service principle (atomai-deployment-master-sp)</td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid windowtext;border-left:1.0pt solid windowtext;border-right:1.0pt solid windowtext;border-top:1.0pt none windowtext;height:15.0pt;padding:0in 5.4pt;vertical-align:top;width:47.35pt;">3</td>
+        <td style="border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:15.0pt;padding:0in 5.4pt;vertical-align:top;width:492.65pt;">Create storage account (atomaimastersa), container (terraformmasterstate) and generate sas token to save the terraform state file</td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid windowtext;border-left:1.0pt solid windowtext;border-right:1.0pt solid windowtext;border-top:1.0pt none windowtext;height:15.0pt;padding:0in 5.4pt;vertical-align:top;width:47.35pt;">4</td>
+        <td style="border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:15.0pt;padding:0in 5.4pt;vertical-align:top;width:492.65pt;">Create new Project in Azure Devops (atomai_core)&amp; Create service connection in Azure devops (atomai-deployment-master-sc)</td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid windowtext;border-left:1.0pt solid windowtext;border-right:1.0pt solid windowtext;border-top:1.0pt none windowtext;height:15.0pt;padding:0in 5.4pt;vertical-align:top;width:47.35pt;">5</td>
+        <td style="border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:15.0pt;padding:0in 5.4pt;vertical-align:top;width:492.65pt;">Create Resource group for Atom (atom_studio_prod_rg) and (atom_studio_uat_rg) and (atom_studio_dev_rg)</td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid windowtext;border-left:1.0pt solid windowtext;border-right:1.0pt solid windowtext;border-top:1.0pt none windowtext;height:15.0pt;padding:0in 5.4pt;vertical-align:top;width:47.35pt;">6</td>
+        <td style="border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:15.0pt;padding:0in 5.4pt;vertical-align:top;width:492.65pt;">create the pipeline(infra-atomai-stack) to create Keyvault, Hasura, PostgreSQL, Service Bus, Webapp, Function App,Vnet</td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid windowtext;border-left:1.0pt solid windowtext;border-right:1.0pt solid windowtext;border-top:1.0pt none windowtext;height:15.0pt;padding:0in 5.4pt;vertical-align:top;width:47.35pt;">7</td>
+        <td style="border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:15.0pt;padding:0in 5.4pt;vertical-align:top;width:492.65pt;">Feathr&amp; Edp setup on atom platform</td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid windowtext;border-left:1.0pt solid windowtext;border-right:1.0pt solid windowtext;border-top:1.0pt none windowtext;height:15.0pt;padding:0in 5.4pt;vertical-align:top;width:47.35pt;">8</td>
+        <td style="border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:15.0pt;padding:0in 5.4pt;vertical-align:top;width:492.65pt;">Code deployment(Frontend&amp;Backend)</td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid windowtext;border-left:1.0pt solid windowtext;border-right:1.0pt solid windowtext;border-top:1.0pt none windowtext;height:15.0pt;padding:0in 5.4pt;vertical-align:top;width:47.35pt;">9</td>
+        <td style="border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:15.0pt;padding:0in 5.4pt;vertical-align:top;width:492.65pt;">Hasura metadata export/import &amp; Data restoring</td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid windowtext;border-left:1.0pt solid windowtext;border-right:1.0pt solid windowtext;border-top:1.0pt none windowtext;height:15.0pt;padding:0in 5.4pt;vertical-align:top;width:47.35pt;">10</td>
+        <td style="border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;height:15.0pt;padding:0in 5.4pt;vertical-align:top;width:492.65pt;">Trubleshooting Issues</td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+<p>&nbsp;</p>
+<h2><strong>Work Activities&nbsp;</strong></h2>
+<p><strong>1. Creation of Subscription and create master service principle (atomai-deployment-master-sp)for &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; automatic deployment of full stack.</strong></p>
+<p>&nbsp;</p>
+<h4><strong>Creating a service principal</strong></h4>
+<p>You can create a new or use an existing service principal in your Azure Active Directory tenant.</p>
+<p><strong>App registration</strong></p>
+<ul>
+  <li>Navigate to the&nbsp;<a href="https://portal.azure.com/">Azure portal</a>.</li>
+  <li>Select&nbsp;<strong>Azure Active Directory</strong>&nbsp;from the left-hand side menu</li>
+</ul>
+<figure class="image"><img src="/atom/infra_deployment/1.png"></figure>
+<ul>
+  <li>Select&nbsp;<strong>App registrations</strong>&nbsp;and&nbsp;<strong>+ New registration</strong></li>
+</ul>
+<figure class="image"><img src="/atom/infra_deployment/2.png"></figure>
+<ul>
+  <li>Enter a name for the&nbsp;<strong>application</strong>&nbsp;(the service principal name).</li>
+  <li>Select&nbsp;<strong>Accounts in this organizational directory only</strong>.</li>
+  <li>For&nbsp;<strong>Redirect URI</strong>&nbsp;select&nbsp;<strong>Web</strong>&nbsp;and enter any URL you want; it doesn't have to be real or work.</li>
+  <li>Then select&nbsp;<strong>Register</strong>.</li>
+</ul>
+<figure class="image"><img src="/atom/infra_deployment/3.png"></figure>
+<figure class="image"><img src="/atom/infra_deployment/4.png"></figure>
+<p><strong>Create a subscription</strong></p>
+<p>Use the following procedure to create a subscription for yourself or for someone in the current Azure Active Directory. When you're done, the new subscription is created immediately.</p>
+<ul>
+  <li>Sign in to the&nbsp;<a href="https://portal.azure.com/">Azure portal</a>.</li>
+  <li>Navigate to&nbsp;<strong>Subscriptions</strong>&nbsp;and then select&nbsp;<strong>Add</strong>.</li>
+</ul>
+<figure class="image"><img src="/atom/infra_deployment/6.png"></figure>
+<ul>
+  <li>On the Create a subscription page, on the&nbsp;<strong>Basics</strong>&nbsp;tab, type a&nbsp;<strong>Subscription name</strong>.</li>
+  <li>Select the&nbsp;<strong>Billing account</strong>&nbsp;where the new subscription will get created.</li>
+  <li>Select the&nbsp;<strong>Billing profile</strong>&nbsp;where the subscription will get created.</li>
+  <li>Select the&nbsp;<strong>Invoice section</strong>&nbsp;where the subscription will get created.</li>
+  <li>Next to&nbsp;<strong>Plan</strong>, select&nbsp;<strong>Microsoft Azure Plan for DevTest</strong>&nbsp;if the subscription will be used for development or testing workloads. Otherwise, select&nbsp;<strong>Microsoft Azure Plan</strong>.</li>
+</ul>
+<figure class="image"><img src="/atom/infra_deployment/7.png"></figure>
+<figure class="image"><img src="/atom/infra_deployment/5.png"></figure>
+<ul>
+  <li>Select the&nbsp;<strong>Advanced</strong>&nbsp;tab.</li>
+  <li>Select your&nbsp;<strong>Subscription directory</strong>. It's the Azure Active Directory (Azure AD) where the new subscription will get created.</li>
+  <li>Select a&nbsp;<strong>Management group</strong>. It's the Azure AD management group that the new subscription is associated with. You can only select management groups in the current directory.</li>
+  <li>Select one or more&nbsp;<strong>Subscription owners</strong>. You can select only users or service principals in the selected subscription directory. You can't select guest directory users. If you select a service principal, enter its App ID.</li>
+</ul>
+<figure class="image"><img src="/atom/infra_deployment/7.png"></figure>
+<ul>
+  <li>Select the&nbsp;<strong>Tags</strong>&nbsp;tab.</li>
+  <li>Enter tag pairs for&nbsp;<strong>Name</strong>&nbsp;and&nbsp;<strong>Value</strong>.</li>
+</ul>
+<figure class="image"><img src="/atom/infra_deployment/8.png"></figure>
+<ul>
+  <li>Select&nbsp;<strong>Review + create</strong>. You should see a message stating&nbsp;Validation passed.</li>
+  <li>Verify that the subscription information is correct, then select&nbsp;<strong>Create</strong>. You'll see a notification that the subscription is getting created.</li>
+</ul>
+<p>After the new subscription is created, the owner of the subscription can see it in the&nbsp;<strong>Subscriptions</strong>&nbsp;page.</p>
+<p><strong>2. Create a&nbsp; custom role in Azure IAM (Atomai-UserAccess-CustomRole) and Assign custom role and &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Contributor role to service principle (atomai-deployment-master-sp)&nbsp;</strong></p>
+<p>This custom role just like built-in roles, you can assign custom roles to users, group, and spn at management&nbsp;group (in preview only), subscription, and RG scope.<strong>&nbsp; &nbsp; &nbsp; &nbsp;</strong></p>
+<p><strong>For Built-in &amp;Custom roles:</strong></p>
+<p><strong>Select subscription&gt;go to access control(IAM)&gt;select role&gt; we can see the list of built-in and custom role.</strong></p>
+<figure class="image"><img src="/atom/infra_deployment/9.png"></figure>
+<p>Please follow the below screenshot for creation of custom role(IAM) on azure subscription.</p>
+<p><strong>Select subscription&gt;go to access control(IAM)&gt;Add&gt;select add custom role&gt;Basic&gt;start from json&gt;upload the json file.</strong></p>
+<figure class="image"><img src="/atom/infra_deployment/10.png"></figure>
+<figure class="image"><img src="/atom/infra_deployment/11.png"></figure>
+<p style="text-align:center;"><a href="https://tasolutions.sharepoint.com/sites/AtomInfraDeploymentteam/Shared%20Documents/Forms/AllItems.aspx?OR=Teams%2DHL&amp;CT=1663748923007&amp;clickparams=eyJBcHBOYW1lIjoiVGVhbXMtRGVza3RvcCIsIkFwcFZlcnNpb24iOiIyNy8yMjA3MzEwMTAwNSIsIkhhc0ZlZGVyYXRlZFVzZXIiOmZhbHNlfQ%3D%3D&amp;id=%2Fsites%2FAtomInfraDeploymentteam%2FShared%20Documents%2FCustomRoleDefinition%2Ejson&amp;parent=%2Fsites%2FAtomInfraDeploymentteam%2FShared%20Documents"><strong>CustomRoleDefinition</strong></a><strong>&nbsp;</strong></p>
+<p><strong>&nbsp;</strong></p>
+<p><strong>3. Create storage account (atomaimastersa), container (terraformmasterstate) and generate sas token to save the&nbsp;terraform state file</strong></p>
+<ul>
+  <li>Open storage accounts then click on Create</li>
+</ul>
+<figure class="image"><img src="/atom/infra_deployment/12.png"></figure>
+<ul>
+  <li>Select Subscription, Resource Group and enter Storage account name and select West US Region and LRS Redundancy then default values then after preview and create</li>
+</ul>
+<figure class="image"><img src="/atom/infra_deployment/13.png"></figure>
+<figure class="image"><img src="/atom/infra_deployment/14.png"></figure>
+<ul>
+  <li>Once Created storage account go to containers then click on container enter the container name and create it.</li>
+</ul>
+<figure class="image"><img src="/atom/infra_deployment/15.png"></figure>
+<figure class="image"><img src="/atom/infra_deployment/16.png"></figure>
+<p>&nbsp;</p>
+<p><strong>4. Create new Project in Azure Devops (atomai_core)&amp;Create service connection</strong><br>&nbsp;</p>
+<ul>
+  <li>Create a new ADO Project – atomai_core then click on service connection</li>
+</ul>
+<figure class="image"><img src="/atom/infra_deployment/17.png"></figure>
+<ul>
+  <li>Right side top click on New service connection then choose <strong>@Azure resource manager&nbsp;</strong>then click on next select<strong> Service Principal (manual)&nbsp;</strong>click on next and enter the all the required fields.</li>
+</ul>
+<figure class="image"><img src="/atom/infra_deployment/18.png"></figure>
+<p><strong>5,6. Create Resource group for Atom (atomai_prod_rg) and (atomai_uat_rg) and (atomai_dev_rg)</strong></p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; Resource group creation along with below atom-stack resource.</p>
+<ul>
+  <li>WebApp</li>
+  <li>KeyVault</li>
+  <li>Hasura</li>
+  <li>PostGres</li>
+  <li>Service Bus</li>
+  <li>Virtual network</li>
+  <li>FunctionApp</li>
+</ul>
+<p>&nbsp; &nbsp; &nbsp; Refer the below repo and CI pipelines</p>
+<p>&nbsp; &nbsp; &nbsp;&nbsp;<a href="https://dev.azure.com/Studio-Org/atomai_core/_git/infra_atomai_stack">https://dev.azure.com/Studio-Org/atomai_core/_git/infra_atomai_stack</a>&nbsp;</p>
+<figure class="image"><img src="/atom/infra_deployment/19.png"></figure>
+<p><a href="https://dev.azure.com/Studio-Org/atomai_core/_apps/hub/ms.vss-ciworkflow.build-ci-hub?_a=edit-build-definition&amp;id=605&amp;view=Tab_Tasks">https://dev.azure.com/Studio-Org/atomai_core/_apps/hub/ms.vss-ciworkflow.build-ci-hub?_a=edit-build-definition&amp;id=605&amp;view=Tab_Tasks</a></p>
+<figure class="image"><img src="/atom/infra_deployment/20.png"></figure>
+<p><strong>Replace Token:&nbsp;</strong>Its useful to replace the variable from terraform script with given pattern [“#{}”]</p>
+<p><strong>Terraform Init:</strong>&nbsp;initializes a working directory containing Terraform configuration files &amp; initialize the backend in storage account to store the state file.</p>
+<p><strong>Terraform Validation:</strong> run from the command line in the directory containing your Terraform files</p>
+<p><strong>Terraform Plan:</strong> Lets you preview any changes before you apply them.</p>
+<p><strong>Terraform Apply:</strong> Execute the changes defined by your terraform configuration to create, update, or destroy</p>
+<p>&nbsp;</p>
+<p><strong>7. feathr and edp set-up on atom platform:</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp;</strong>Below are the resource for feathr and edp.</p>
+<ul>
+  <li>Azure Data Factory</li>
+  <li>Databricks</li>
+  <li>Keyvault</li>
+  <li>Purview Account</li>
+  <li>Storage Account for Datalake</li>
+  <li>Azure Container Registry</li>
+  <li>Nextjs</li>
+  <li>Fastapi</li>
+  <li>Redis</li>
+</ul>
+<p>&nbsp; &nbsp; &nbsp;<a href="https://dev.azure.com/Studio-Org/atomai_core/_git/infra_atomai_fethr_stack">https://dev.azure.com/Studio-Org/atomai_core/_git/infra_atomai_fethr_stack</a></p>
+<figure class="image"><img src="/atom/infra_deployment/21.png"></figure>
+<p><a href="https://dev.azure.com/Studio-Org/atomai_core/_apps/hub/ms.vss-ciworkflow.build-ci-hub?_a=edit-build-definition&amp;id=611">https://dev.azure.com/Studio-Org/atomai_core/_apps/hub/ms.vss-ciworkflow.build-ci-hub?_a=edit-build-definition&amp;id=611</a></p>
+<figure class="image"><img src="/atom/infra_deployment/22.png"></figure>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;<a href="https://dev.azure.com/Studio-Org/atomai_core/_git/infra_atomai_edp_stack">https://dev.azure.com/Studio-Org/atomai_core/_git/infra_atomai_edp_stack</a></p>
+<figure class="image"><img src="/atom/infra_deployment/23.png"></figure>
+<p><a href="https://dev.azure.com/Studio-Org/atomai_core/_apps/hub/ms.vss-ciworkflow.build-ci-hub?_a=edit-build-definition&amp;id=612"><strong>https://dev.azure.com/Studio-Org/atomai_core/_apps/hub/ms.vss-ciworkflow.build-ci-hub?_a=edit-build-definition&amp;id=612</strong></a><strong>&nbsp;</strong></p>
+<figure class="image"><img src="/atom/infra_deployment/24.png"></figure>
+<p><strong>8. Code deployment on atom frontend and backend application through an atomation:</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp;</strong><a href="https://dev.azure.com/Studio-Org/atomai_core/_git/atomai_FE_react?path=/.env"><strong>https://dev.azure.com/Studio-Org/atomai_core/_git/atomai_FE_react?path=/.env</strong></a></p>
+<figure class="image"><img src="/atom/infra_deployment/25.png"></figure>
+<p><strong>&nbsp; &nbsp;&nbsp; </strong>Clone the repo from studio-platform to atomai_core project and modify the .env file as below mentioned.</p>
+<p><a href="https://dev.azure.com/Studio-Org/atomai_core/_apps/hub/ms.vss-ciworkflow.build-ci-hub?_a=edit-build-definition&amp;id=656"><strong>https://dev.azure.com/Studio-Org/atomai_core/_apps/hub/ms.vss-ciworkflow.build-ci-hub?_a=edit-build-definition&amp;id=656</strong></a></p>
+<p>Import the FE build-pipeline from studio-platform and change the get-source and add required tasks as below.</p>
+<figure class="image"><img src="/atom/infra_deployment/26.png"></figure>
+<p>&nbsp; &nbsp;<strong>Release Pipeline</strong></p>
+<p><a href="https://dev.azure.com/Studio-Org/atomai_core/_releaseDefinition?definitionId=1&amp;_a=definition-tasks&amp;environmentId=1"><strong>https://dev.azure.com/Studio-Org/atomai_core/_releaseDefinition?definitionId=1&amp;_a=definition-tasks&amp;environmentId=1</strong></a></p>
+<figure class="image"><img src="/atom/infra_deployment/27.png"></figure>
+<p>In backend also we should change the .env file as per our requirements as below mentioned like “servicebus" &nbsp;&nbsp;queues &amp;pipeline id</p>
+<p><strong>&nbsp; &nbsp; &nbsp;&nbsp;</strong><a href="https://dev.azure.com/Studio-Org/atomai_core/_git/atomai_BE_node?path=/.env"><strong>https://dev.azure.com/Studio-Org/atomai_core/_git/atomai_BE_node?path=/.env</strong></a></p>
+<figure class="image"><img src="/atom/infra_deployment/28.png"></figure>
+<p>&nbsp;&nbsp; &nbsp; &nbsp;Backend repo one more file we should modify that is config file with postGres credentials.</p>
+<p>&nbsp;&nbsp; &nbsp; &nbsp;<a href="https://dev.azure.com/Studio-Org/atomai_core/_git/atomai_BE_node?path=/config/config.json">https://dev.azure.com/Studio-Org/atomai_core/_git/atomai_BE_node?path=/config/config.json</a></p>
+<figure class="image"><img src="/atom/infra_deployment/29.png"></figure>
+<p><a href="https://dev.azure.com/Studio-Org/atomai_core/_apps/hub/ms.vss-ciworkflow.build-ci-hub?_a=edit-build-definition&amp;id=657"><strong>https://dev.azure.com/Studio-Org/atomai_core/_apps/hub/ms.vss-ciworkflow.build-ci-hub?_a=edit-build-definition&amp;id=657</strong></a></p>
+<p><strong>&nbsp; &nbsp; &nbsp; Build-Pipeline</strong></p>
+<figure class="image"><img src="/atom/infra_deployment/30.png"></figure>
+<p><strong>&nbsp; &nbsp; &nbsp; Release Pipeline</strong></p>
+<p><a href="https://dev.azure.com/Studio-Org/atomai_core/_releaseDefinition?definitionId=2&amp;_a=definition-tasks&amp;environmentId=2"><strong>https://dev.azure.com/Studio-Org/atomai_core/_releaseDefinition?definitionId=2&amp;_a=definition-tasks&amp;environmentId=2</strong></a></p>
+<figure class="image"><img src="/atom/infra_deployment/31.png"></figure>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;</p>
+<p><strong>9. Hasura metadata export/import &amp; Data restoring in PgAdmin:</strong></p>
+<p>&nbsp; &nbsp; Refer wiki <a href="https://dev.azure.com/Studio-Org/Deployment-Studio/_wiki/wikis/Deployment-Studio.wiki/171/Hasura-Migration">https://dev.azure.com/Studio-Org/Deployment-Studio/_wiki/wikis/Deployment-Studio.wiki/171/Hasura-Migration</a></p>
+<ul>
+  <li>First backup of postgres only schemas</li>
+</ul>
+<figure class="image"><img src="/atom/infra_deployment/32.png"></figure>
+<ul>
+  <li>Then import only schemas(tables included,no data)into new postgres</li>
+  <li>Export metadata from old hasura</li>
+</ul>
+<p>&nbsp; &nbsp; &nbsp; Click on hasura url&gt;right side top there is setting symble click on it and export the hasura metadata</p>
+<figure class="image"><img src="/atom/infra_deployment/33.png"></figure>
+<ul>
+  <li>Import meta data to new hasura</li>
+</ul>
+<p>&nbsp; &nbsp; &nbsp; Click on new hasura url&gt; click on setting symble them import the metadata.</p>
+<figure class="image"><img src="/atom/infra_deployment/34.png"></figure>
+<ul>
+  <li>Export required tables from old postgres</li>
+</ul>
+<figure class="image"><img src="/atom/infra_deployment/35.png"></figure>
+<ul>
+  <li>Export the table by giving it a name (select headers if required)</li>
+  <li>In columns section add NULL strings as NUll.then ok</li>
+  <li>For import, click and select file</li>
+</ul>
+<figure class="image"><img src="/atom/infra_deployment/36.png"></figure>
+<ul>
+  <li>Enable headers if enabled in export step</li>
+  <li>Select delimiter as,</li>
+  <li>In columns section null strings as NUll and click ok.</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>10. Troubleshooting Issues:</strong></p>
+<ul>
+  <li>We are added the redirect url in app registration to athunticate the application. This is the way we had done</li>
+</ul>
+<p><strong>&nbsp; &nbsp; &nbsp; Go to &nbsp;Tredence Studio Platform(App registration name)&gt;click on authontication&gt;add platform</strong></p>
+<figure class="image"><img src="/atom/infra_deployment/37.png"></figure>
+<p><strong>11.&nbsp;Function app for users&amp;Ad groups creation:</strong></p>
+<p>We are deploying the function app code for users and ad groups creation with custom api.find the code as per below commands.</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;<strong>Go to atomai_core ado project&gt;click on repos &amp;select files&gt;select studiographapi repo.</strong></p>
+<figure class="image"><img src="/atom/infra_deployment/38.png"></figure>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp;Build Pipeline:</strong></p>
+<p><a href="https://dev.azure.com/Studio-Org/atomai_core/_apps/hub/ms.vss-ciworkflow.build-ci-hub?_a=edit-build-definition&amp;id=672"><strong>https://dev.azure.com/Studio-Org/atomai_core/_apps/hub/ms.vss-ciworkflow.build-ci-hub?_a=edit-build-definition&amp;id=672</strong></a></p>
+<figure class="image"><img src="/atom/infra_deployment/40.png"></figure>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp;Release Pipeline:</strong></p>
+<p><a href="https://dev.azure.com/Studio-Org/atomai_core/_releaseDefinition?definitionId=7&amp;_a=definition-tasks&amp;environmentId=7"><strong>https://dev.azure.com/Studio-Org/atomai_core/_releaseDefinition?definitionId=7&amp;_a=definition-tasks&amp;environmentId=7</strong></a></p>
+<figure class="image"><img src="/atom/infra_deployment/39.png"></figure>
+<p>&nbsp;</p>
+<p><strong>12. Cloudbeaver app service Configurations:</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp;</strong>We are following the same configurations of <strong>dbbeavercloud2&nbsp;</strong>to set up in<strong> atom-studio-prod-cloudbeaver.</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp;dbbeavercloud2:</strong></p>
+<figure class="image"><img src="/atom/infra_deployment/41.png"></figure>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp;Atom-studio-prod-cloudbeaver:</strong></p>
+<figure class="image"><img src="/atom/infra_deployment/42.png"></figure>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp;</strong></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Thank you</strong></p>
+<hr>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</strong></p>
+<figure class="image"><img src="/atom/discover_atom/31.png"></figure>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</strong></p>

@@ -1,0 +1,970 @@
+<!--
+title: 2. TALP: Data Model
+description: 
+published: true
+date: 2022-08-17T10:30:13.000Z
+tags: 
+editor: undefined
+dateCreated: 2022-08-17T10:29:54.349Z
+-->
+
+<h1>Data Model</h1>
+<p>The data model demonstrates the relationships between the tables used by TALP.</p>
+<p>&nbsp;</p>
+<h1>Overview of the Data Model</h1>
+<h6><i>An overview into the dimensions and facts tables in TALP Data Model:</i></h6>
+<p>&nbsp;</p>
+<blockquote>
+  <h6>Store Transaction</h6>
+  <p><strong>Primary Key field name:</strong> ordr_id</p>
+  <p><strong>Primary Key field name:</strong> ordr_dt</p>
+  <p><strong>Foreign Key field name: </strong>store_id</p>
+  <p><strong>Foreign Key field name:</strong> sku</p>
+  <p>&nbsp;</p>
+  <p><strong>Foreign Key reference:</strong> store_dim.store_id</p>
+  <p><strong>Foreign Key reference:</strong> item_hierarchy.sku</p>
+</blockquote>
+<blockquote>
+  <h6>Store</h6>
+  <p><strong>Primary Key field name:</strong> store_id</p>
+</blockquote>
+<blockquote>
+  <h6>Item Hierarchy</h6>
+  <p><strong>Primary Key field name:</strong> sku</p>
+</blockquote>
+<blockquote>
+  <h6>Campaign Master</h6>
+  <p><strong>Primary Key field name:</strong> campaign_id</p>
+</blockquote>
+<p>&nbsp;</p>
+<h1>Deep-Dive into the Tables</h1>
+<h6><i>A Detailed View into the dimensions and facts tables in TALP Data Model:</i></h6>
+<p>&nbsp;</p>
+<h6><i>Store Transaction</i></h6>
+<figure class="table" style="width:503.6pt;">
+  <table style="border-bottom:5px solid hsl(0, 0%, 0%);border-left:5px solid hsl(0, 0%, 0%);border-right:5px solid hsl(0, 0%, 0%);border-top:5px solid hsl(0, 0%, 0%);">
+    <thead>
+      <tr>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;"><strong>Column Name</strong></p>
+        </th>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;"><strong>Field Type</strong></p>
+        </th>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;"><strong>Key References</strong></p>
+        </th>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;"><strong>Data Type</strong></p>
+        </th>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;"><strong>Description</strong></p>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">ordr_id</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;">Primary Key</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;">Unique transaction identifier</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">ordr_dt</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;">Primary Key</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;">date</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;">Transaction Date</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">store_id</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;">Foreign Key</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;">store_dim.store_id</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;">Store Identifier</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">sku</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;">Foreign Key</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;">item_hierarchy.sku</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;">Product Identifier</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">cust_id</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;">Customer Identifier</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">sales</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;">float</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;">Total Sales for an order</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">units</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;">integer</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;">Quantity of Items ordered</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+<p>&nbsp;</p>
+<h6>Store</h6>
+<figure class="table">
+  <table style="border-bottom:5px solid hsl(0, 0%, 0%);border-left:5px solid hsl(0, 0%, 0%);border-right:5px solid hsl(0, 0%, 0%);border-top:5px solid hsl(0, 0%, 0%);">
+    <thead>
+      <tr>
+        <th style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:112.1pt;"><strong>Column Name</strong></th>
+        <th style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:.75in;">
+          <p style="text-align:center;"><strong>Field Type</strong></p>
+        </th>
+        <th style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:103.5pt;">
+          <p style="text-align:center;"><strong>Key References</strong></p>
+        </th>
+        <th style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:1.0in;">
+          <p style="text-align:center;"><strong>Data Type</strong></p>
+        </th>
+        <th style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:161.65pt;">
+          <p style="text-align:center;"><strong>Description</strong></p>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:112.1pt;">store_id</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:.75in;">
+          <p style="text-align:center;">Primary Key</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:103.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:1.0in;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:161.65pt;">
+          <p style="text-align:center;">Store Identifier</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:112.1pt;">str_compny_cd</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:.75in;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:103.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:1.0in;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:161.65pt;">
+          <p style="text-align:center;">Store Company Code</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:112.1pt;">str_brand</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:.75in;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:103.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:1.0in;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:161.65pt;">
+          <p style="text-align:center;">Store Brand</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:112.1pt;">store_type</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:.75in;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:103.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:1.0in;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:161.65pt;">
+          <p style="text-align:center;">Store Type</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:112.1pt;">city</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:.75in;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:103.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:1.0in;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:161.65pt;">
+          <p style="text-align:center;">Store City</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:112.1pt;">state</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:.75in;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:103.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:1.0in;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:161.65pt;">
+          <p style="text-align:center;">Store State</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:112.1pt;">Country</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:.75in;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:103.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:1.0in;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:161.65pt;">
+          <p style="text-align:center;">Store Country</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:112.1pt;">str_zip_cd</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:.75in;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:103.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:1.0in;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:161.65pt;">
+          <p style="text-align:center;">Store Zip Code</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:112.1pt;">str_region</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:.75in;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:103.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:1.0in;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:161.65pt;">
+          <p style="text-align:center;">Store Region</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:112.1pt;">square_footage</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:.75in;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:103.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:1.0in;">
+          <p style="text-align:center;">float</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:161.65pt;">
+          <p style="text-align:center;">Store Square Footage</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:112.1pt;">tv_market_code</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:.75in;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:103.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:1.0in;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:161.65pt;">
+          <p style="text-align:center;">TV Market</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:112.1pt;">tv_market_desc</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:.75in;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:103.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:1.0in;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:161.65pt;">
+          <p style="text-align:center;">TV Market Description</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:112.1pt;">is_ecom_store</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:.75in;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:103.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:1.0in;">
+          <p style="text-align:center;">boolean</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:161.65pt;">
+          <p style="text-align:center;">Is store is e-commerce/online store</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:112.1pt;">market_code</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:.75in;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:103.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:1.0in;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:161.65pt;">
+          <p style="text-align:center;">Market Code</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:112.1pt;">market_desc</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:.75in;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:103.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:1.0in;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:161.65pt;">
+          <p style="text-align:center;">Market Desc</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:112.1pt;">no_of_employees</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:.75in;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:103.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:1.0in;">
+          <p style="text-align:center;">integer</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:161.65pt;">
+          <p style="text-align:center;">Store Employee Count</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:112.1pt;">no_of_fte</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:.75in;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:103.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:1.0in;">
+          <p style="text-align:center;">integer</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:161.65pt;">
+          <p style="text-align:center;">Store Full Time Employee Count</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:112.1pt;">avg_income</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:.75in;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:103.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:1.0in;">
+          <p style="text-align:center;">float</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:161.65pt;">
+          <p style="text-align:center;">Average Income of a person working in a store</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:112.1pt;">households</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:.75in;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:103.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:1.0in;">
+          <p style="text-align:center;">integer</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:161.65pt;">
+          <p style="text-align:center;">number of households cover by a store</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:112.1pt;">urbanicity</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:.75in;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:103.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:1.0in;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:161.65pt;">
+          <p style="text-align:center;">Store Location: in Urban or Rural Area</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:112.1pt;">fast_score</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:.75in;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:103.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:1.0in;">
+          <p style="text-align:center;">float</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:161.65pt;">
+          <p style="text-align:center;">Feedback rating (1 to 10) - How quickly order is getting placed and processed</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:112.1pt;">friendly_score</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:.75in;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:103.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:1.0in;">
+          <p style="text-align:center;">float</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:161.65pt;">
+          <p style="text-align:center;">Feedback rating (1 to 10) - How friendly the store is during the customer visit</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:112.1pt;">product_availability</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:.75in;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:103.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:1.0in;">
+          <p style="text-align:center;">float</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:161.65pt;">
+          <p style="text-align:center;">Feedback rating (1 to 10) - Are all the necessary products in stock</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:112.1pt;">cleanliness_score</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:.75in;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:103.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:1.0in;">
+          <p style="text-align:center;">float</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:161.65pt;">
+          <p style="text-align:center;">Feedback rating (1 to 10) - How clean the store is</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:112.1pt;">price_perception</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:.75in;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:103.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:1.0in;">
+          <p style="text-align:center;">float</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:161.65pt;">
+          <p style="text-align:center;">Feedback rating (1 to 10) - How a customer sees/perceives the price of an item by looking at the price tag</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+<p>&nbsp;</p>
+<h6>Item Hierarchy</h6>
+<figure class="table" style="width:503.6pt;">
+  <table style="border-bottom:5px solid hsl(0, 0%, 0%);border-left:5px solid hsl(0, 0%, 0%);border-right:5px solid hsl(0, 0%, 0%);border-top:5px solid hsl(0, 0%, 0%);">
+    <thead>
+      <tr>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:112.1pt;">
+          <p style="text-align:center;"><strong>Column Name</strong></p>
+        </th>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:.75in;">
+          <p style="text-align:center;"><strong>Field Type</strong></p>
+        </th>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:103.5pt;">
+          <p style="text-align:center;"><strong>Key References</strong></p>
+        </th>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:1.0in;">
+          <p style="text-align:center;"><strong>Data Type</strong></p>
+        </th>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:2.25in;">
+          <p style="text-align:center;"><strong>Description</strong></p>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:112.1pt;">sku</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:.75in;">
+          <p style="text-align:center;">Primary Key</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:103.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:1.0in;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:2.25in;">
+          <p style="text-align:center;">Product Identifier</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:112.1pt;">dept_nm</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:.75in;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:103.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:1.0in;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:2.25in;">
+          <p style="text-align:center;">Department</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:112.1pt;">cat_nm</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:.75in;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:103.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:1.0in;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:2.25in;">
+          <p style="text-align:center;">Category</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:112.1pt;">subcat_nm</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:.75in;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:103.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:1.0in;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:2.25in;">
+          <p style="text-align:center;">Sub-Category</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+<p>&nbsp;</p>
+<h6>Campaign Master</h6>
+<figure class="table">
+  <table style="border-bottom:5px solid hsl(0, 0%, 0%);border-left:5px solid hsl(0, 0%, 0%);border-right:5px solid hsl(0, 0%, 0%);border-top:5px solid hsl(0, 0%, 0%);">
+    <thead>
+      <tr>
+        <th style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:112.1pt;"><strong>Column Name</strong></th>
+        <th style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:.75in;">
+          <p style="text-align:center;"><strong>Field Type</strong></p>
+        </th>
+        <th style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:103.5pt;">
+          <p style="text-align:center;"><strong>Key References</strong></p>
+        </th>
+        <th style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:1.0in;">
+          <p style="text-align:center;"><strong>Data Type</strong></p>
+        </th>
+        <th style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:161.65pt;">
+          <p style="text-align:center;"><strong>Description</strong></p>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:112.1pt;">campaign_id</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:.75in;">
+          <p style="text-align:center;">Primary Key</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:103.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:1.0in;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:161.65pt;">
+          <p style="text-align:center;">Campaign identifier</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:112.1pt;">campaign_name</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:.75in;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:103.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:1.0in;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:161.65pt;">
+          <p style="text-align:center;">Name of the Campaign</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:112.1pt;">campaign_desc</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:.75in;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:103.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:1.0in;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:161.65pt;">
+          <p style="text-align:center;">Description of the Campaign</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:112.1pt;">campaign_level</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:.75in;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:103.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:1.0in;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:161.65pt;">
+          <p style="text-align:center;">Level of the Campaign</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:112.1pt;">campaign_type</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:.75in;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:103.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:1.0in;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:161.65pt;">
+          <p style="text-align:center;">Type of the Campaign</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:112.1pt;">dept_hierarchy</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:.75in;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:103.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:1.0in;">
+          <p style="text-align:center;">array</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:161.65pt;">
+          <p style="text-align:center;">Merchandise Hierarchy (level 1) - Department</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:112.1pt;">catg_hierarchy</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:.75in;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:103.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:1.0in;">
+          <p style="text-align:center;">array</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:161.65pt;">
+          <p style="text-align:center;">Merchandise Hierarchy (level 2) - Category</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:112.1pt;">subcat_hierarchy</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:.75in;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:103.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:1.0in;">
+          <p style="text-align:center;">array</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:161.65pt;">
+          <p style="text-align:center;">Merchandise Hierarchy (level 3) - Sub-category</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:112.1pt;">sku_hierarchy</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:.75in;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:103.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:1.0in;">
+          <p style="text-align:center;">array</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:161.65pt;">
+          <p style="text-align:center;">Merchandise Hierarchy (level 4) - SKU</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:112.1pt;">primary_kpi</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:.75in;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:103.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:1.0in;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:161.65pt;">
+          <p style="text-align:center;">Primary KPI Name</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:112.1pt;">measure_kpis</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:.75in;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:103.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:1.0in;">
+          <p style="text-align:center;">array</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:161.65pt;">
+          <p style="text-align:center;">KPIs list to be measured</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:112.1pt;">start_dt</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:.75in;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:103.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:1.0in;">
+          <p style="text-align:center;">date</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:161.65pt;">
+          <p style="text-align:center;">Start date of the campaign</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:112.1pt;">duration</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:.75in;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:103.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:1.0in;">
+          <p style="text-align:center;">integer</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:161.65pt;">
+          <p style="text-align:center;">Duration of the Campaign</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:112.1pt;">end_dt</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:.75in;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:103.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:1.0in;">
+          <p style="text-align:center;">date</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:161.65pt;">
+          <p style="text-align:center;">End date of the Campaign</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:112.1pt;">pre_start_dt</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:.75in;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:103.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:1.0in;">
+          <p style="text-align:center;">date</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:161.65pt;">
+          <p style="text-align:center;">Pre-Period Start date of the Campaign</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:112.1pt;">pre_duration</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:.75in;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:103.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:1.0in;">
+          <p style="text-align:center;">integer</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:161.65pt;">
+          <p style="text-align:center;">Pre-Period Duration of the Campaign</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:112.1pt;">pre_end_dt</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:.75in;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:103.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:1.0in;">
+          <p style="text-align:center;">date</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:161.65pt;">
+          <p style="text-align:center;">Pre-Period End date of the Campaign</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:112.1pt;">created_date</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:.75in;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:103.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:1.0in;">
+          <p style="text-align:center;">timestamp</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:161.65pt;">
+          <p style="text-align:center;">Campaign created date and time</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:112.1pt;">created_by</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:.75in;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:103.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:1.0in;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:161.65pt;">
+          <p style="text-align:center;">Campaign Designed/Created By</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>

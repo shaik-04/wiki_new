@@ -1,0 +1,582 @@
+<!--
+title: 3. TALP: Metrics Layer
+description: 
+published: true
+date: 2022-08-17T10:38:25.373Z
+tags: 
+editor: undefined
+dateCreated: 2022-08-17T10:38:12.907Z
+-->
+
+<h1>Metrics Layer</h1>
+<p>Metrics layer is the final consumption layer which acts as the central repository for all the business metrics. Functional KPIs at different levels are quantified and put in this layer for final consumption.</p>
+<h1>Metric Tables</h1>
+<h6>Campaign Pre-Period</h6>
+<figure class="table" style="width:503.2pt;">
+  <table style="border-bottom:5px solid hsl(0, 0%, 0%);border-left:5px solid hsl(0, 0%, 0%);border-right:5px solid hsl(0, 0%, 0%);border-top:5px solid hsl(0, 0%, 0%);">
+    <thead>
+      <tr>
+        <th style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:76.1pt;">
+          <p style="text-align:center;"><strong>Column Name</strong></p>
+        </th>
+        <th style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:67.5pt;">
+          <p style="text-align:center;"><strong>Field Type</strong></p>
+        </th>
+        <th style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:58.5pt;">
+          <p style="text-align:center;"><strong>Data Type</strong></p>
+        </th>
+        <th style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:207.0pt;">
+          <p style="text-align:center;"><strong>Description</strong></p>
+        </th>
+        <th style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:94.1pt;">
+          <p style="text-align:center;"><strong>KPI</strong></p>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:76.1pt;">campaign_id</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:67.5pt;">
+          <p style="text-align:center;">Primary Key</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:58.5pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:207.0pt;">
+          <p style="text-align:center;">Campaign Identifier</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:94.1pt;">
+          <p style="text-align:center;">&nbsp;</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:76.1pt;">store_id</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:67.5pt;">
+          <p style="text-align:center;">Primary Key</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:58.5pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:207.0pt;">
+          <p style="text-align:center;">Store Identifier</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:94.1pt;">
+          <p style="text-align:center;">&nbsp;</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:76.1pt;">dept</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:67.5pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:58.5pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:207.0pt;">
+          <p style="text-align:center;">Department</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:94.1pt;">
+          <p style="text-align:center;">&nbsp;</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:76.1pt;">category</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:67.5pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:58.5pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:207.0pt;">
+          <p style="text-align:center;">Category</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:94.1pt;">
+          <p style="text-align:center;">&nbsp;</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:76.1pt;">kpi_name</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:67.5pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:58.5pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:207.0pt;">
+          <p style="text-align:center;">KPI Name</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:94.1pt;">
+          <p style="text-align:center;">&nbsp;</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:76.1pt;">kpi_val</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:67.5pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:58.5pt;">
+          <p style="text-align:center;">float</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:207.0pt;">
+          <p style="text-align:center;">KPI Value</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:94.1pt;">
+          <p style="text-align:center;">&nbsp;</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+<p>&nbsp;</p>
+<h6>&nbsp;Campaign Pre-Period Primary</h6>
+<figure class="table" style="width:503.2pt;">
+  <table style="border-bottom:5px solid hsl(0, 0%, 0%);border-left:5px solid hsl(0, 0%, 0%);border-right:5px solid hsl(0, 0%, 0%);border-top:5px solid hsl(0, 0%, 0%);">
+    <thead>
+      <tr>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:76.1pt;">
+          <p style="text-align:center;"><strong>Column Name</strong></p>
+        </th>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:67.5pt;">
+          <p style="text-align:center;"><strong>Field Type</strong></p>
+        </th>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:58.5pt;">
+          <p style="text-align:center;"><strong>Data Type</strong></p>
+        </th>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:207.0pt;">
+          <p style="text-align:center;"><strong>Description</strong></p>
+        </th>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:94.1pt;">
+          <p style="text-align:center;"><strong>KPI</strong></p>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:76.1pt;">campaign_id</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:67.5pt;">
+          <p style="text-align:center;">Primary Key</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:58.5pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:207.0pt;">
+          <p style="text-align:center;">Campaign Identifier</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:94.1pt;">
+          <p style="text-align:center;">&nbsp;</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:76.1pt;">store_id</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:67.5pt;">
+          <p style="text-align:center;">Primary Key</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:58.5pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:207.0pt;">
+          <p style="text-align:center;">Store Identifier</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:94.1pt;">
+          <p style="text-align:center;">&nbsp;</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:76.1pt;">dept</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:67.5pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:58.5pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:207.0pt;">
+          <p style="text-align:center;">Department</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:94.1pt;">
+          <p style="text-align:center;">&nbsp;</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:76.1pt;">category</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:67.5pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:58.5pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:207.0pt;">
+          <p style="text-align:center;">Category</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:94.1pt;">
+          <p style="text-align:center;">&nbsp;</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:76.1pt;">kpi_name</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:67.5pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:58.5pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:207.0pt;">
+          <p style="text-align:center;">KPI Name</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:94.1pt;">
+          <p style="text-align:center;">&nbsp;</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:76.1pt;">kpi_val</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:67.5pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:58.5pt;">
+          <p style="text-align:center;">float</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:207.0pt;">
+          <p style="text-align:center;">KPI Value</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;width:94.1pt;">
+          <p style="text-align:center;">&nbsp;</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+<p>&nbsp;</p>
+<h6>Campaign Test Control Mapping</h6>
+<figure class="table" style="width:503.2pt;">
+  <table style="border-bottom:5px solid hsl(0, 0%, 0%);border-left:5px solid hsl(0, 0%, 0%);border-right:5px solid hsl(0, 0%, 0%);border-top:5px solid hsl(0, 0%, 0%);">
+    <thead>
+      <tr>
+        <th style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:89.8pt;">
+          <p style="text-align:center;"><strong>Column Name</strong></p>
+        </th>
+        <th style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:66.25pt;">
+          <p style="text-align:center;"><strong>Field Type</strong></p>
+        </th>
+        <th style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:56.95pt;">
+          <p style="text-align:center;"><strong>Data Type</strong></p>
+        </th>
+        <th style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:199.8pt;">
+          <p style="text-align:center;"><strong>Description</strong></p>
+        </th>
+        <th style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:90.4pt;">
+          <p style="text-align:center;"><strong>KPI</strong></p>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:89.8pt;">campaign_id</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:66.25pt;">
+          <p style="text-align:center;">Primary Key</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:56.95pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:199.8pt;">
+          <p style="text-align:center;">Campaign Identifier</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:90.4pt;">
+          <p style="text-align:center;">&nbsp;</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:89.8pt;">test_store_id</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:66.25pt;">
+          <p style="text-align:center;">Primary Key</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:56.95pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:199.8pt;">
+          <p style="text-align:center;">Test Store Identifier</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:90.4pt;">
+          <p style="text-align:center;">&nbsp;</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:89.8pt;">control_store_id</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:66.25pt;">
+          <p style="text-align:center;">Primary Key</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:56.95pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:199.8pt;">
+          <p style="text-align:center;">Control Store Identifier</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:90.4pt;">
+          <p style="text-align:center;">&nbsp;</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:89.8pt;">test_outlier_flag</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:66.25pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:56.95pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:199.8pt;">
+          <p style="text-align:center;">Flag to indicate whether test store has outliers or not</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:90.4pt;">
+          <p style="text-align:center;">&nbsp;</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:89.8pt;">control_outlier_flag</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:66.25pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:56.95pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:199.8pt;">
+          <p style="text-align:center;">Flag to indicate whether control store has outliers or not</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:90.4pt;">
+          <p style="text-align:center;">&nbsp;</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+<p>&nbsp;</p>
+<h6>Campaign Match Stats</h6>
+<figure class="table" style="width:503.2pt;">
+  <table style="border-bottom:5px solid hsl(0, 0%, 0%);border-left:5px solid hsl(0, 0%, 0%);border-right:5px solid hsl(0, 0%, 0%);border-top:5px solid hsl(0, 0%, 0%);">
+    <thead>
+      <tr>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;"><strong>Column Name</strong></p>
+        </th>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;"><strong>Field Type</strong></p>
+        </th>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;"><strong>Data Type</strong></p>
+        </th>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;"><strong>Description</strong></p>
+        </th>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;"><strong>KPI</strong></p>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">campaign_id</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;">Primary Key</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;">Campaign Identifier</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;">&nbsp;</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">kpi_name</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;">Primary Key</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;">KPI Name</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;">&nbsp;</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">test_avg</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;">float</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;">KPI Average Value for Test Stores</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;">&nbsp;</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">control_avg</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;">float</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;">KPI Average Value for Control Stores</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;">&nbsp;</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">pct_diff_in_means</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;">float</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;">Percentage Difference between Test Average and Control Average</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;">&nbsp;</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">stats_similarity</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;">float</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;">Statistical Similarity in Test Average and Control Average</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;">
+          <p style="text-align:center;">&nbsp;</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+<p>&nbsp;</p>
+<h6>Campaign 52-Weeks</h6>
+<figure class="table" style="width:503.2pt;">
+  <table style="border-bottom:5px solid hsl(0, 0%, 0%);border-left:5px solid hsl(0, 0%, 0%);border-right:5px solid hsl(0, 0%, 0%);border-top:5px solid hsl(0, 0%, 0%);">
+    <thead>
+      <tr>
+        <th style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:84.25pt;">
+          <p style="text-align:center;"><strong>Column Name</strong></p>
+        </th>
+        <th style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:66.75pt;">
+          <p style="text-align:center;"><strong>Field Type</strong></p>
+        </th>
+        <th style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:.8in;">
+          <p style="text-align:center;"><strong>Data Type</strong></p>
+        </th>
+        <th style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:202.7pt;">
+          <p style="text-align:center;"><strong>Description</strong></p>
+        </th>
+        <th style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:91.9pt;">
+          <p style="text-align:center;"><strong>KPI</strong></p>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:84.25pt;">campaign_id</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:66.75pt;">
+          <p style="text-align:center;">Primary Key</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:.8in;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:202.7pt;">
+          <p style="text-align:center;">Campaign Identifier</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:91.9pt;">
+          <p style="text-align:center;">&nbsp;</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:84.25pt;">week_nbr</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:66.75pt;">
+          <p style="text-align:center;">Primary Key</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:.8in;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:202.7pt;">
+          <p style="text-align:center;">Week Number</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:91.9pt;">
+          <p style="text-align:center;">&nbsp;</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:84.25pt;">week_nbr_flag</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:66.75pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:.8in;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:202.7pt;">
+          <p style="text-align:center;">Flag to indicate whether the KPI values should be shown for all the 52 weeks or only for pre period weeks</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:91.9pt;">
+          <p style="text-align:center;">&nbsp;</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:84.25pt;">test_control_flag</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:66.75pt;">
+          <p style="text-align:center;">Primary Key</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:.8in;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:202.7pt;">
+          <p style="text-align:center;">Flag to indicate whether the KPI value is calculated for test or control stores</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:91.9pt;">
+          <p style="text-align:center;">&nbsp;</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:84.25pt;">kpi_name</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:66.75pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:.8in;">
+          <p style="text-align:center;">float</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:202.7pt;">
+          <p style="text-align:center;">KPI Name</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:91.9pt;">
+          <p style="text-align:center;">&nbsp;</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:84.25pt;">kpi_value</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:66.75pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:.8in;">
+          <p style="text-align:center;">float</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:bottom;width:202.7pt;">
+          <p style="text-align:center;">KPI Value</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:14.25pt;padding:0in;vertical-align:top;width:91.9pt;">
+          <p style="text-align:center;">&nbsp;</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>

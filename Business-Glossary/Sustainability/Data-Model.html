@@ -1,0 +1,1312 @@
+<!--
+title: 2. Sustainability: Data Model
+description: 
+published: true
+date: 2022-07-19T10:10:49.660Z
+tags: 
+editor: undefined
+dateCreated: 2022-07-19T10:10:29.376Z
+-->
+
+<h1>Data Model</h1>
+<p>The data model demonstrates the relationships between the tables used by Sustainability.</p>
+<p>&nbsp;</p>
+<h1>Overview of the Data Model</h1>
+<h6><i>An overview into the dimensions and facts tables in Sustainability Data Model:</i></h6>
+<p>&nbsp;</p>
+<blockquote>
+  <h6><strong>Date</strong></h6>
+  <p><strong>Primary Key field name:</strong> Date ID</p>
+</blockquote>
+<blockquote>
+  <h6><strong>Organization Hierarchy</strong></h6>
+  <p><strong>Primary Key field name:</strong> Org ID</p>
+</blockquote>
+<blockquote>
+  <h6><strong>Organization Facility</strong></h6>
+  <p><strong>Primary Key field name:</strong> Org Facility ID</p>
+</blockquote>
+<blockquote>
+  <h6><strong>Emission Gases</strong></h6>
+  <p><strong>Primary Key field name:</strong> Gas ID</p>
+</blockquote>
+<blockquote>
+  <h6><strong>Organization</strong></h6>
+  <p><strong>Primary Key field name:</strong> Org ID</p>
+  <p><strong>Foreign Key field name:</strong> Org ID</p>
+  <p>&nbsp;</p>
+  <p><strong>Foreign Key reference:</strong> Organization Hierarchy.Org ID</p>
+</blockquote>
+<blockquote>
+  <h6><strong>Scope 1 Emission Category</strong></h6>
+  <p><strong>Primary Key field name:</strong> Emission Category 1 ID</p>
+</blockquote>
+<blockquote>
+  <h6><strong>Scope 2 Emission Category</strong></h6>
+  <p><strong>Primary Key field name: </strong>Emission Category 2 ID</p>
+</blockquote>
+<blockquote>
+  <h6><strong>Scope 3 Emission Category</strong></h6>
+  <p><strong>Primary Key field name:</strong> Emission Category 3 ID</p>
+</blockquote>
+<blockquote>
+  <h6>Scope 2 Accounting Method</h6>
+  <p><strong>Primary Key field name:</strong> Accounting Method ID</p>
+</blockquote>
+<blockquote>
+  <h6><strong>Scope 1 Emission</strong></h6>
+  <p><strong>Foreign Key field name:</strong> Date ID</p>
+  <p><strong>Foreign Key field name:</strong> Emission Category ID</p>
+  <p><strong>Foreign Key field name:</strong> Org ID</p>
+  <p><strong>Foreign Key field name:</strong> Org Facility ID</p>
+  <p><strong>Foreign Key field name:</strong> Gas ID</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p><strong>Foreign Key reference: </strong>Date.Date ID</p>
+  <p><strong>Foreign Key reference:</strong> Scope 1 Emission Category.Emission Category 1 ID</p>
+  <p><strong>Foreign Key reference: </strong>Organization.Org ID</p>
+  <p><strong>Foreign Key reference:</strong> Organization Facility.Org Facility ID</p>
+  <p><strong>Foreign Key reference:</strong> Emission Gases.Gas ID</p>
+</blockquote>
+<blockquote>
+  <h6><strong>Scope 2 Emission</strong></h6>
+  <p><strong>Foreign Key field name:</strong> Date ID</p>
+  <p><strong>Foreign Key field name:</strong> Emission Category ID</p>
+  <p><strong>Foreign Key field name:</strong> Org ID</p>
+  <p><strong>Foreign Key field name:</strong> Org Facility ID</p>
+  <p><strong>Foreign Key field name:</strong> Gas ID</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p><strong>Foreign Key reference: </strong>Date.Date ID</p>
+  <p><strong>Foreign Key reference:</strong> Scope 2 Emission Category.Emission Category 2 ID</p>
+  <p><strong>Foreign Key reference: </strong>Organization.Org ID</p>
+  <p><strong>Foreign Key reference:</strong> Organization Facility.Org Facility ID</p>
+  <p><strong>Foreign Key reference:</strong> Emission Gases.Gas ID</p>
+</blockquote>
+<blockquote>
+  <h6><strong>Scope 3 Emission</strong></h6>
+  <p><strong>Foreign Key field name:</strong> Date ID</p>
+  <p><strong>Foreign Key field name:</strong> Emission Category ID</p>
+  <p><strong>Foreign Key field name:</strong> Org ID</p>
+  <p><strong>Foreign Key field name:</strong> Org Facility ID</p>
+  <p><strong>Foreign Key field name:</strong> Gas ID</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p><strong>Foreign Key reference: </strong>Date.Date ID</p>
+  <p><strong>Foreign Key reference:</strong> Scope 3 Emission Category.Emission Category 3 ID</p>
+  <p><strong>Foreign Key reference: </strong>Organization.Org ID</p>
+  <p><strong>Foreign Key reference:</strong> Organization Facility.Org Facility ID</p>
+  <p><strong>Foreign Key reference:</strong> Emission Gases.Gas ID</p>
+</blockquote>
+<p>&nbsp;</p>
+<h1>Deep-Dive into the Tables</h1>
+<h6><i>A Detailed View into the dimensions and facts tables in Sustainability Data Model:</i></h6>
+<p>&nbsp;</p>
+<h6>Date</h6>
+<figure class="table" style="width:503.5pt;">
+  <table style="border-bottom:5px solid hsl(0, 0%, 0%);border-left:5px solid hsl(0, 0%, 0%);border-right:5px solid hsl(0, 0%, 0%);border-top:5px solid hsl(0, 0%, 0%);">
+    <thead>
+      <tr>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;">
+          <p style="text-align:center;"><strong>Column Name</strong></p>
+        </th>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;">
+          <p style="text-align:center;"><strong>Field Type</strong></p>
+        </th>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;">
+          <p style="text-align:center;"><strong>Key References</strong></p>
+        </th>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;">
+          <p style="text-align:center;"><strong>Data Type</strong></p>
+        </th>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;">
+          <p style="text-align:center;"><strong>Description</strong></p>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:98.8pt;">Date ID</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:64.25pt;">
+          <p style="text-align:center;">Primary Key</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:156.0pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:34.6pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:149.85pt;">
+          <p style="text-align:center;">Unique Identifier of Date</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:98.8pt;">Year</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:64.25pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:156.0pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:34.6pt;">
+          <p style="text-align:center;">int</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:149.85pt;">
+          <p style="text-align:center;">Year</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:98.8pt;">Month Start Date</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:64.25pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:156.0pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:34.6pt;">
+          <p style="text-align:center;">date</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:149.85pt;">
+          <p style="text-align:center;">Month Start Date</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:98.8pt;">Month End Date</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:64.25pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:156.0pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:34.6pt;">
+          <p style="text-align:center;">date</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:149.85pt;">
+          <p style="text-align:center;">Month End Date</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:98.8pt;">Month Num</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:64.25pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:156.0pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:34.6pt;">
+          <p style="text-align:center;">int</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:149.85pt;">
+          <p style="text-align:center;">Month Number</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:98.8pt;">Month Name</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:64.25pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:156.0pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:34.6pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:149.85pt;">
+          <p style="text-align:center;">Month Name</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+<p>&nbsp;</p>
+<h6>Organization</h6>
+<figure class="table" style="width:503.5pt;">
+  <table style="border-bottom:5px solid hsl(0, 0%, 0%);border-left:5px solid hsl(0, 0%, 0%);border-right:5px solid hsl(0, 0%, 0%);border-top:5px solid hsl(0, 0%, 0%);">
+    <thead>
+      <tr>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:98.8pt;">
+          <p style="text-align:center;"><strong>Column Name</strong></p>
+        </th>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:64.25pt;">
+          <p style="text-align:center;"><strong>Field Type</strong></p>
+        </th>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:156.0pt;">
+          <p style="text-align:center;"><strong>Key References</strong></p>
+        </th>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:34.6pt;">
+          <p style="text-align:center;"><strong>Data Type</strong></p>
+        </th>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:149.85pt;">
+          <p style="text-align:center;"><strong>Description</strong></p>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:98.8pt;">Org ID</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:64.25pt;">
+          <p style="text-align:center;">Primary Key / Foreign Key</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:156.0pt;">
+          <p style="text-align:center;">Organization Hierarchy.Ord ID</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:34.6pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:149.85pt;">
+          <p style="text-align:center;">Unique Identifier of Organizations</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:98.8pt;">Org Name</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:64.25pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:156.0pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:34.6pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:149.85pt;">
+          <p style="text-align:center;">Organization Name</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:98.8pt;">Org Type</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:64.25pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:156.0pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:34.6pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:149.85pt;">
+          <p style="text-align:center;">Organization Type</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);height:8.05pt;padding:0in;width:98.8pt;">Org Region</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);height:8.05pt;padding:0in;width:64.25pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);height:8.05pt;padding:0in;width:156.0pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);height:8.05pt;padding:0in;width:34.6pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);height:8.05pt;padding:0in;width:149.85pt;">
+          <p style="text-align:center;">Region to which the Organization belongs to</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:98.8pt;">Org Country</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:64.25pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:156.0pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:34.6pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:149.85pt;">
+          <p style="text-align:center;">Country to which the Organization belongs to</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:98.8pt;">Latitude</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:64.25pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:156.0pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:34.6pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:149.85pt;">
+          <p style="text-align:center;">Latitude</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:98.8pt;">Longitude</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:64.25pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:156.0pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:34.6pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:149.85pt;">
+          <p style="text-align:center;">Longitude</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+<p>&nbsp;</p>
+<h6>Organization Hierarchy</h6>
+<figure class="table" style="width:503.5pt;">
+  <table style="border-bottom:5px solid hsl(0, 0%, 0%);border-left:5px solid hsl(0, 0%, 0%);border-right:5px solid hsl(0, 0%, 0%);border-top:5px solid hsl(0, 0%, 0%);">
+    <thead>
+      <tr>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:98.8pt;">
+          <p style="text-align:center;"><strong>Column Name</strong></p>
+        </th>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:64.25pt;">
+          <p style="text-align:center;"><strong>Field Type</strong></p>
+        </th>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:156.0pt;">
+          <p style="text-align:center;"><strong>Key References</strong></p>
+        </th>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:34.6pt;">
+          <p style="text-align:center;"><strong>Data Type</strong></p>
+        </th>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:149.85pt;">
+          <p style="text-align:center;"><strong>Description</strong></p>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:98.8pt;">Org ID</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:64.25pt;">
+          <p style="text-align:center;">Primary Key</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:156.0pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:34.6pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:149.85pt;">
+          <p style="text-align:center;">Unique Identifier of Organizations</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:98.8pt;">Org Company</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:64.25pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:156.0pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:34.6pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:149.85pt;">
+          <p style="text-align:center;">Organization Company</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:98.8pt;">Org Division</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:64.25pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:156.0pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:34.6pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:149.85pt;">
+          <p style="text-align:center;">Organization Division</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);height:8.05pt;padding:0in;vertical-align:bottom;width:98.8pt;">Org Department</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);height:8.05pt;padding:0in;vertical-align:top;width:64.25pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);height:8.05pt;padding:0in;vertical-align:top;width:156.0pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);height:8.05pt;padding:0in;vertical-align:bottom;width:34.6pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);height:8.05pt;padding:0in;vertical-align:top;width:149.85pt;">
+          <p style="text-align:center;">Organization Department</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:98.8pt;">Org Team</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:64.25pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:156.0pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:34.6pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:149.85pt;">
+          <p style="text-align:center;">Organization Team</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:98.8pt;">Org Group</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:64.25pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:156.0pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:34.6pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:149.85pt;">
+          <p style="text-align:center;">Organization Group</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:98.8pt;">Org Name</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:64.25pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:156.0pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:34.6pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:149.85pt;">
+          <p style="text-align:center;">Organization Name</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:98.8pt;">Org Level</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:64.25pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:156.0pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:34.6pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:149.85pt;">
+          <p style="text-align:center;">Organization Level</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+<p>&nbsp;</p>
+<h6>Organization Facility</h6>
+<figure class="table" style="width:503.5pt;">
+  <table style="border-bottom:5px solid hsl(0, 0%, 0%);border-left:5px solid hsl(0, 0%, 0%);border-right:5px solid hsl(0, 0%, 0%);border-top:5px solid hsl(0, 0%, 0%);">
+    <thead>
+      <tr>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:98.8pt;">
+          <p style="text-align:center;"><strong>Column Name</strong></p>
+        </th>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:64.25pt;">
+          <p style="text-align:center;"><strong>Field Type</strong></p>
+        </th>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:156.0pt;">
+          <p style="text-align:center;"><strong>Key References</strong></p>
+        </th>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:34.6pt;">
+          <p style="text-align:center;"><strong>Data Type</strong></p>
+        </th>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:149.85pt;">
+          <p style="text-align:center;"><strong>Description</strong></p>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:98.8pt;">Or g Facility ID</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:64.25pt;">
+          <p style="text-align:center;">Primary Key</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:156.0pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:34.6pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:149.85pt;">
+          <p style="text-align:center;">Unique Identifier of Organization Facilities</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:98.8pt;">Org Facility Name</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:64.25pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:156.0pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:34.6pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:149.85pt;">
+          <p style="text-align:center;">Organization Facility Name&nbsp;</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+<p>&nbsp;</p>
+<h6>Emission Gases</h6>
+<figure class="table" style="width:503.5pt;">
+  <table style="border-bottom:5px solid hsl(0, 0%, 0%);border-left:5px solid hsl(0, 0%, 0%);border-right:5px solid hsl(0, 0%, 0%);border-top:5px solid hsl(0, 0%, 0%);">
+    <thead>
+      <tr>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:98.8pt;">
+          <p style="text-align:center;"><strong>Column Name</strong></p>
+        </th>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:64.25pt;">
+          <p style="text-align:center;"><strong>Field Type</strong></p>
+        </th>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:156.0pt;">
+          <p style="text-align:center;"><strong>Key References</strong></p>
+        </th>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:34.6pt;">
+          <p style="text-align:center;"><strong>Data Type</strong></p>
+        </th>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:149.85pt;">
+          <p style="text-align:center;"><strong>Description</strong></p>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:98.8pt;">Gas ID</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:64.25pt;">
+          <p style="text-align:center;">Primary Key</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:156.0pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:34.6pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:149.85pt;">
+          <p style="text-align:center;">Unique Identifier of Gases</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:98.8pt;">Gas Name</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:64.25pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:156.0pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:34.6pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:149.85pt;">
+          <p style="text-align:center;">Gas Name like CO2, CH4, N2O etc.,&nbsp;</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:98.8pt;">UOM</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:64.25pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:156.0pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:34.6pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:149.85pt;">
+          <p style="text-align:center;">Unit of Measurement (mt, Kg etc.,)</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+<p>&nbsp;</p>
+<h6>Scope 1 Emission Category</h6>
+<figure class="table" style="width:503.5pt;">
+  <table style="border-bottom:5px solid hsl(0, 0%, 0%);border-left:5px solid hsl(0, 0%, 0%);border-right:5px solid hsl(0, 0%, 0%);border-top:5px solid hsl(0, 0%, 0%);">
+    <thead>
+      <tr>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:98.8pt;">
+          <p style="text-align:center;"><strong>Column Name</strong></p>
+        </th>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:64.25pt;">
+          <p style="text-align:center;"><strong>Field Type</strong></p>
+        </th>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:156.0pt;">
+          <p style="text-align:center;"><strong>Key References</strong></p>
+        </th>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:34.6pt;">
+          <p style="text-align:center;"><strong>Data Type</strong></p>
+        </th>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:149.85pt;">
+          <p style="text-align:center;"><strong>Description</strong></p>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:98.8pt;">Emission Category 1 ID</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:64.25pt;">
+          <p style="text-align:center;">Primary Key</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:156.0pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:34.6pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:149.85pt;">
+          <p style="text-align:center;">Unique Identifier of Emission Categories</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:98.8pt;">Emission Source</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:64.25pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:156.0pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:34.6pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:149.85pt;">
+          <p style="text-align:center;">Source of Emission (Fugitive, Industrial, Mobile, Stationary)&nbsp;</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:98.8pt;">Emission SubType</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:64.25pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:156.0pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:34.6pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:149.85pt;">
+          <p style="text-align:center;">SubType (Fuel, Vehicle)</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:98.8pt;">Emission SubType Value</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:64.25pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:156.0pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:34.6pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:149.85pt;">
+          <p style="text-align:center;">SubType Value (Coal, Petroleum etc.,)</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+<p>&nbsp;</p>
+<h6>Scope 2 Emission Category</h6>
+<figure class="table" style="width:503.5pt;">
+  <table style="border-bottom:5px solid hsl(0, 0%, 0%);border-left:5px solid hsl(0, 0%, 0%);border-right:5px solid hsl(0, 0%, 0%);border-top:5px solid hsl(0, 0%, 0%);">
+    <thead>
+      <tr>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:98.8pt;">
+          <p style="text-align:center;"><strong>Column Name</strong></p>
+        </th>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:64.25pt;">
+          <p style="text-align:center;"><strong>Field Type</strong></p>
+        </th>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:156.0pt;">
+          <p style="text-align:center;"><strong>Key References</strong></p>
+        </th>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:34.6pt;">
+          <p style="text-align:center;"><strong>Data Type</strong></p>
+        </th>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:149.85pt;">
+          <p style="text-align:center;"><strong>Description</strong></p>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:98.8pt;">Emission Category 2 ID</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:64.25pt;">
+          <p style="text-align:center;">Primary Key</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:156.0pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:34.6pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:149.85pt;">
+          <p style="text-align:center;">Unique Identifier of Emission Categories</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:98.8pt;">Emission Source</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:64.25pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:156.0pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:34.6pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:149.85pt;">
+          <p style="text-align:center;">Source of Emission (Purchased Cooling, Purchased Electricity, Purchased Heat, Purchased Steam)&nbsp;</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+<p>&nbsp;</p>
+<h6>Scope 3 Emission Category</h6>
+<figure class="table" style="width:503.5pt;">
+  <table style="border-bottom:5px solid hsl(0, 0%, 0%);border-left:5px solid hsl(0, 0%, 0%);border-right:5px solid hsl(0, 0%, 0%);border-top:5px solid hsl(0, 0%, 0%);">
+    <thead>
+      <tr>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:98.8pt;">
+          <p style="text-align:center;"><strong>Column Name</strong></p>
+        </th>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:64.25pt;">
+          <p style="text-align:center;"><strong>Field Type</strong></p>
+        </th>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:156.0pt;">
+          <p style="text-align:center;"><strong>Key References</strong></p>
+        </th>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:34.6pt;">
+          <p style="text-align:center;"><strong>Data Type</strong></p>
+        </th>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:149.85pt;">
+          <p style="text-align:center;"><strong>Description</strong></p>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:98.8pt;">Emission Category 3 ID</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:64.25pt;">
+          <p style="text-align:center;">Primary Key</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:156.0pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:34.6pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:149.85pt;">
+          <p style="text-align:center;">Unique Identifier of Emission Categories</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:98.8pt;">Emission Category</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:64.25pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:156.0pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:34.6pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:149.85pt;">
+          <p style="text-align:center;">Emission Category (Capital goods, Business travel)&nbsp;</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:98.8pt;">Type of Method</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:64.25pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:156.0pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:34.6pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:149.85pt;">
+          <p style="text-align:center;">Type of Method (Hybrid, Supplier Specific, Fuel based)</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:98.8pt;">Emission SubCategory</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:64.25pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:156.0pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:34.6pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:149.85pt;">
+          <p style="text-align:center;">Emission SubCategory (Machinery, Construction)</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+<p>&nbsp;</p>
+<h6>Scope 2 Accounting Method</h6>
+<figure class="table" style="width:503.5pt;">
+  <table style="border-bottom:5px solid hsl(0, 0%, 0%);border-left:5px solid hsl(0, 0%, 0%);border-right:5px solid hsl(0, 0%, 0%);border-top:5px solid hsl(0, 0%, 0%);">
+    <thead>
+      <tr>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:98.8pt;">
+          <p style="text-align:center;"><strong>Column Name</strong></p>
+        </th>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:64.25pt;">
+          <p style="text-align:center;"><strong>Field Type</strong></p>
+        </th>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:156.0pt;">
+          <p style="text-align:center;"><strong>Key References</strong></p>
+        </th>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:34.6pt;">
+          <p style="text-align:center;"><strong>Data Type</strong></p>
+        </th>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:149.85pt;">
+          <p style="text-align:center;"><strong>Description</strong></p>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:98.8pt;">Accounting Method ID</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:64.25pt;">
+          <p style="text-align:center;">Primary Key</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:156.0pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:34.6pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:149.85pt;">
+          <p style="text-align:center;">Unique Identifier of Emission Accounting Methods</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:98.8pt;">Accounting Method</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:64.25pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:156.0pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:34.6pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:149.85pt;">
+          <p style="text-align:center;">Accounting Method (Location, Market)</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+<p>&nbsp;</p>
+<h6>Scope 1 Emission</h6>
+<figure class="table" style="width:503.5pt;">
+  <table style="border-bottom:5px solid hsl(0, 0%, 0%);border-left:5px solid hsl(0, 0%, 0%);border-right:5px solid hsl(0, 0%, 0%);border-top:5px solid hsl(0, 0%, 0%);">
+    <thead>
+      <tr>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:98.8pt;">
+          <p style="text-align:center;"><strong>Column Name</strong></p>
+        </th>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:64.25pt;">
+          <p style="text-align:center;"><strong>Field Type</strong></p>
+        </th>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:156.0pt;">
+          <p style="text-align:center;"><strong>Key References</strong></p>
+        </th>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:34.6pt;">
+          <p style="text-align:center;"><strong>Data Type</strong></p>
+        </th>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:149.85pt;">
+          <p style="text-align:center;"><strong>Description</strong></p>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:98.8pt;">Date ID</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:64.25pt;">
+          <p style="text-align:center;">Foreign Key</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:156.0pt;">
+          <p style="text-align:center;">Date.Date ID</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:34.6pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:149.85pt;">
+          <p style="text-align:center;">Unique Identifier of Date</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:98.8pt;">Emission Category ID</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:64.25pt;">
+          <p style="text-align:center;">Foreign Key</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:156.0pt;">
+          <p style="text-align:center;">Scope 1 Emission Category.Emission Category 1 ID</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:34.6pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:149.85pt;">
+          <p style="text-align:center;">Unique Identifier of Emission Categories</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:98.8pt;">Org ID</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:64.25pt;">
+          <p style="text-align:center;">Foreign Key</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:156.0pt;">
+          <p style="text-align:center;">Organization.Org ID</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:34.6pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:149.85pt;">
+          <p style="text-align:center;">Unique Identifier of Organizations</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:98.8pt;">Org Facility ID</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:64.25pt;">
+          <p style="text-align:center;">Foreign Key</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:156.0pt;">
+          <p style="text-align:center;">Organization Facility.Org Facility ID</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:34.6pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:149.85pt;">
+          <p style="text-align:center;">Unique Identifier of Organization Facilities</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:98.8pt;">Gas ID</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:64.25pt;">
+          <p style="text-align:center;">Foreign Key</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:156.0pt;">
+          <p style="text-align:center;">Emission Gases.Gas ID</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:34.6pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:149.85pt;">
+          <p style="text-align:center;">Unique Identifier of Gases</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:98.8pt;">Qty</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:64.25pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:156.0pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:34.6pt;">
+          <p style="text-align:center;">float</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:149.85pt;">
+          <p style="text-align:center;">Quantity</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:98.8pt;">Transaction Date</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:64.25pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:156.0pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:34.6pt;">
+          <p style="text-align:center;">date</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:149.85pt;">
+          <p style="text-align:center;">Transaction Date</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+<p>&nbsp;</p>
+<h6>Scope 2 Emission</h6>
+<figure class="table" style="width:503.5pt;">
+  <table style="border-bottom:5px solid hsl(0, 0%, 0%);border-left:5px solid hsl(0, 0%, 0%);border-right:5px solid hsl(0, 0%, 0%);border-top:5px solid hsl(0, 0%, 0%);">
+    <thead>
+      <tr>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:98.8pt;">
+          <p style="text-align:center;"><strong>Column Name</strong></p>
+        </th>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:64.25pt;">
+          <p style="text-align:center;"><strong>Field Type</strong></p>
+        </th>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:156.0pt;">
+          <p style="text-align:center;"><strong>Key References</strong></p>
+        </th>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:34.6pt;">
+          <p style="text-align:center;"><strong>Data Type</strong></p>
+        </th>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:149.85pt;">
+          <p style="text-align:center;"><strong>Description</strong></p>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:98.8pt;">Date ID</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:64.25pt;">
+          <p style="text-align:center;">Foreign Key</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:156.0pt;">
+          <p style="text-align:center;">Date.Date ID</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:34.6pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:149.85pt;">
+          <p style="text-align:center;">Unique Identifier of Date</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:98.8pt;">Emission Category ID</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:64.25pt;">
+          <p style="text-align:center;">Foreign Key</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:156.0pt;">
+          <p style="text-align:center;">Scope 2 Emission Category.Emission Category 2 ID</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:34.6pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:149.85pt;">
+          <p style="text-align:center;">Unique Identifier of Emission Categories</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:98.8pt;">Org ID</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:64.25pt;">
+          <p style="text-align:center;">Foreign Key</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:156.0pt;">
+          <p style="text-align:center;">Organization.Org ID</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:34.6pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:149.85pt;">
+          <p style="text-align:center;">Unique Identifier of Organizations</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:98.8pt;">Org Facility ID</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:64.25pt;">
+          <p style="text-align:center;">Foreign Key</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:156.0pt;">
+          <p style="text-align:center;">Organization Facility.Org Facility ID</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:34.6pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:149.85pt;">
+          <p style="text-align:center;">Unique Identifier of Organization Facilities</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:98.8pt;">Gas ID</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:64.25pt;">
+          <p style="text-align:center;">Foreign Key</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:156.0pt;">
+          <p style="text-align:center;">Emission Gases.Gas ID</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:34.6pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:149.85pt;">
+          <p style="text-align:center;">Unique Identifier of Gases</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:98.8pt;">Qty</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:64.25pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:156.0pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:34.6pt;">
+          <p style="text-align:center;">float</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:149.85pt;">
+          <p style="text-align:center;">Quantity</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:98.8pt;">Transaction Date</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:64.25pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:156.0pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:34.6pt;">
+          <p style="text-align:center;">date</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:149.85pt;">
+          <p style="text-align:center;">Transaction Date</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+<p>&nbsp;</p>
+<h6>Scope 3 Emission</h6>
+<figure class="table" style="width:503.5pt;">
+  <table style="border-bottom:5px solid hsl(0, 0%, 0%);border-left:5px solid hsl(0, 0%, 0%);border-right:5px solid hsl(0, 0%, 0%);border-top:5px solid hsl(0, 0%, 0%);">
+    <thead>
+      <tr>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:98.8pt;">
+          <p style="text-align:center;"><strong>Column Name</strong></p>
+        </th>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:64.25pt;">
+          <p style="text-align:center;"><strong>Field Type</strong></p>
+        </th>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:156.0pt;">
+          <p style="text-align:center;"><strong>Key References</strong></p>
+        </th>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:34.6pt;">
+          <p style="text-align:center;"><strong>Data Type</strong></p>
+        </th>
+        <th style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:149.85pt;">
+          <p style="text-align:center;"><strong>Description</strong></p>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:98.8pt;">Date ID</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:64.25pt;">
+          <p style="text-align:center;">Foreign Key</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:156.0pt;">
+          <p style="text-align:center;">Date.Date ID</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:34.6pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:149.85pt;">
+          <p style="text-align:center;">Unique Identifier of Date</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:98.8pt;">Emission Category ID</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:64.25pt;">
+          <p style="text-align:center;">Foreign Key</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:156.0pt;">
+          <p style="text-align:center;">Scope 3 Emission Category.Emission Category 3 ID</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:34.6pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:149.85pt;">
+          <p style="text-align:center;">Unique Identifier of Emission Categories</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:98.8pt;">Org ID</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:64.25pt;">
+          <p style="text-align:center;">Foreign Key</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:156.0pt;">
+          <p style="text-align:center;">Organization.Org ID</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:34.6pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:149.85pt;">
+          <p style="text-align:center;">Unique Identifier of Organizations</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:98.8pt;">Org Facility ID</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:64.25pt;">
+          <p style="text-align:center;">Foreign Key</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:156.0pt;">
+          <p style="text-align:center;">Organization Facility.Org Facility ID</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:34.6pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:149.85pt;">
+          <p style="text-align:center;">Unique Identifier of Organization Facilities</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:98.8pt;">Gas ID</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:64.25pt;">
+          <p style="text-align:center;">Foreign Key</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:156.0pt;">
+          <p style="text-align:center;">Emission Gases.Gas ID</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:34.6pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:149.85pt;">
+          <p style="text-align:center;">Unique Identifier of Gases</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:98.8pt;">Qty</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:64.25pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:156.0pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:34.6pt;">
+          <p style="text-align:center;">float</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:149.85pt;">
+          <p style="text-align:center;">Quantity</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:98.8pt;">Transaction Date</td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:64.25pt;">
+          <p style="text-align:center;">Attribute</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:156.0pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:34.6pt;">
+          <p style="text-align:center;">date</p>
+        </td>
+        <td style="border-bottom:1px solid hsl(0, 0%, 0%);border-left:1px solid hsl(0, 0%, 0%);border-right:1px solid hsl(0, 0%, 0%);border-top:1px solid hsl(0, 0%, 0%);padding:0in;width:149.85pt;">
+          <p style="text-align:center;">Transaction Date</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>

@@ -1,0 +1,1634 @@
+<!--
+title: 3. Cosmos: Metrics Layer
+description: 
+published: true
+date: 2022-06-27T06:50:38.234Z
+tags: 
+editor: undefined
+dateCreated: 2022-06-22T13:57:34.986Z
+-->
+
+<h1>Metrics Layer</h1>
+<p>Metrics layer is the final consumption layer which acts as the central repository for all the business metrics. Functional KPIs at different levels are quantified and put in this layer for final consumption.</p>
+<h1>Metric Tables</h1>
+<h6>Transactions - Brand</h6>
+<figure class="table" style="width:503.2pt;">
+  <table style="border-bottom:5px solid hsl(0, 0%, 0%);border-left:5px solid hsl(0, 0%, 0%);border-right:5px solid hsl(0, 0%, 0%);border-top:5px solid hsl(0, 0%, 0%);">
+    <thead>
+      <tr>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;">
+          <p style="text-align:center;"><strong>Column Name</strong></p>
+        </th>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;">
+          <p style="text-align:center;"><strong>Data Type</strong></p>
+        </th>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;">
+          <p style="text-align:center;"><strong>Description</strong></p>
+        </th>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;">
+          <p style="text-align:center;"><strong>KPI</strong></p>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:105.1pt;">week_nbr</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:74.5pt;">
+          <p style="text-align:center;">int</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:211.5pt;">
+          <p style="text-align:center;">Week-Number of the Metric calculation</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:112.1pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:105.1pt;">last_day_of_week</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:74.5pt;">
+          <p style="text-align:center;">date</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:211.5pt;">
+          <p style="text-align:center;">Last day of the week in which metrics are calculated</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:112.1pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:105.1pt;">customer_id</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:74.5pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:211.5pt;">
+          <p style="text-align:center;">Customer ID</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:112.1pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:105.1pt;">brand_name</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:74.5pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:211.5pt;">
+          <p style="text-align:center;">Brand Name</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:112.1pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:105.1pt;">cust_recency</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:74.5pt;">
+          <p style="text-align:center;">int</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:211.5pt;">
+          <p style="text-align:center;">Days since the last purchase</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:112.1pt;">
+          <p style="text-align:center;">Recency KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:105.1pt;">cust_frequency</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:74.5pt;">
+          <p style="text-align:center;">int</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:211.5pt;">
+          <p style="text-align:center;">No. of transactions in the last one year</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:112.1pt;">
+          <p style="text-align:center;">Frequency KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:105.1pt;">cust_spends</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:74.5pt;">
+          <p style="text-align:center;">double</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:211.5pt;">
+          <p style="text-align:center;">Annual spending</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:112.1pt;">
+          <p style="text-align:center;">Customer Spends KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:105.1pt;">cust_avg_order_gap</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:74.5pt;">
+          <p style="text-align:center;">int</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:211.5pt;">
+          <p style="text-align:center;">Days between purchases. First transaction date and last transaction date divided by the total no. of transactions made.</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:112.1pt;">
+          <p style="text-align:center;">Average Order Gap KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:105.1pt;">cust_new_existing</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:74.5pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:211.5pt;">
+          <p style="text-align:center;">Customers who made their first transaction in the last 90 days are new customers. Existing customers are those who have made more than one transaction.</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:112.1pt;">
+          <p style="text-align:center;">New Existing Flag KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:105.1pt;">cust_tenure</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:74.5pt;">
+          <p style="text-align:center;">int</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:211.5pt;">
+          <p style="text-align:center;">Days since the first purchase</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:112.1pt;">
+          <p style="text-align:center;">Customer Tenure KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:105.1pt;">cust_savings_discounts</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:74.5pt;">
+          <p style="text-align:center;">double</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:211.5pt;">
+          <p style="text-align:center;">Total Discounts &amp; Promotions &amp; Rewards applied across purchases &amp; their percentages compared to total sales</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:112.1pt;">
+          <p style="text-align:center;">Savings Discount KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:105.1pt;">cust_bulk_item</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:74.5pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:211.5pt;">
+          <p style="text-align:center;">Average Basket Size and Average basket value is 95 Percentile. Top 5 percentile would fall under this</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:112.1pt;">
+          <p style="text-align:center;">Bulk Item KPI</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+<p>&nbsp;</p>
+<h6>Transactions - Categories</h6>
+<figure class="table" style="width:503.2pt;">
+  <table style="border-bottom:5px solid hsl(0, 0%, 0%);border-left:5px solid hsl(0, 0%, 0%);border-right:5px solid hsl(0, 0%, 0%);border-top:5px solid hsl(0, 0%, 0%);">
+    <thead>
+      <tr>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:107.6pt;">
+          <p style="text-align:center;"><strong>Column Name</strong></p>
+        </th>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:1.0in;">
+          <p style="text-align:center;"><strong>Data Type</strong></p>
+        </th>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:211.5pt;">
+          <p style="text-align:center;"><strong>Description</strong></p>
+        </th>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:112.1pt;">
+          <p style="text-align:center;"><strong>KPI</strong></p>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:107.6pt;">week_nbr&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:1.0in;">
+          <p style="text-align:center;">int</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:211.5pt;">
+          <p style="text-align:center;">Week-Number of the Metric calculation</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:112.1pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:107.6pt;">last_day_of_week&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:1.0in;">
+          <p style="text-align:center;">date</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:211.5pt;">
+          <p style="text-align:center;">Last day of the week in which metrics are calculated</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:112.1pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:107.6pt;">customer_id&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:1.0in;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:211.5pt;">
+          <p style="text-align:center;">Customer ID</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:112.1pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:107.6pt;">category_name&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:1.0in;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:211.5pt;">
+          <p style="text-align:center;">Category name</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:112.1pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:107.6pt;">cust_recency&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:1.0in;">
+          <p style="text-align:center;">int</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:211.5pt;">
+          <p style="text-align:center;">Days since the last purchase</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:112.1pt;">
+          <p style="text-align:center;">Recency KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:107.6pt;">cust_frequency&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:1.0in;">
+          <p style="text-align:center;">int</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:211.5pt;">
+          <p style="text-align:center;">No. of transactions in the last one year</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:112.1pt;">
+          <p style="text-align:center;">Frequency KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:107.6pt;">cust_spends&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:1.0in;">
+          <p style="text-align:center;">double</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:211.5pt;">
+          <p style="text-align:center;">Annual spending</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:112.1pt;">
+          <p style="text-align:center;">Customer Spends KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:107.6pt;">cust_avg_order_gap&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:1.0in;">
+          <p style="text-align:center;">int</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:211.5pt;">
+          <p style="text-align:center;">Days between purchases. First transaction date and last transaction date divided by the total no. of transactions made.</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:112.1pt;">
+          <p style="text-align:center;">Average Order Gap KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:107.6pt;">cust_new_existing&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:1.0in;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:211.5pt;">
+          <p style="text-align:center;">Customers who made their first transaction in the last 90 days are new customers. Existing customers are those who have made more than one transaction.</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:112.1pt;">
+          <p style="text-align:center;">New Existing Flag KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:107.6pt;">cust_tenure&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:1.0in;">
+          <p style="text-align:center;">int</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:211.5pt;">
+          <p style="text-align:center;">Days since the first purchase</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:112.1pt;">
+          <p style="text-align:center;">Customer Tenure KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:107.6pt;">cust_savings_discounts&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:1.0in;">
+          <p style="text-align:center;">double</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:211.5pt;">
+          <p style="text-align:center;">Total Discounts &amp; Promotions &amp; Rewards applied across purchases &amp; their percentages compared to total sales</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:112.1pt;">
+          <p style="text-align:center;">Savings Discounts KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:107.6pt;">cust_bulk_item&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:1.0in;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:211.5pt;">
+          <p style="text-align:center;">Average Basket Size and Average basket value is 95 Percentile. Top 5 percentile would fall under this</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:112.1pt;">
+          <p style="text-align:center;">Bulk Item KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:107.6pt;">cust_premium_buyer&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:1.0in;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:211.5pt;">
+          <p style="text-align:center;">A customer is a premium buyer, if they buy at least one Premium Product in any of the Categories</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:112.1pt;">
+          <p style="text-align:center;">Premium Buyer KPI</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+<p>&nbsp;</p>
+<h6>Transactions - Customers</h6>
+<figure class="table">
+  <table style="border-bottom:5px solid hsl(0, 0%, 0%);border-left:5px solid hsl(0, 0%, 0%);border-right:5px solid hsl(0, 0%, 0%);border-top:5px solid hsl(0, 0%, 0%);">
+    <thead>
+      <tr>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:107.6pt;">
+          <p style="text-align:center;"><strong>Column Name</strong></p>
+        </th>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:1.0in;">
+          <p style="text-align:center;"><strong>Data Type</strong></p>
+        </th>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:211.5pt;">
+          <p style="text-align:center;"><strong>Description</strong></p>
+        </th>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:112.1pt;">
+          <p style="text-align:center;"><strong>KPI</strong></p>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:107.6pt;">week_nbr&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:1.0in;">
+          <p style="text-align:center;">int</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:211.5pt;">
+          <p style="text-align:center;">Week-Number of the Metric calculation</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:112.1pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:107.6pt;">last_day_of_week&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:1.0in;">
+          <p style="text-align:center;">date</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:211.5pt;">
+          <p style="text-align:center;">Last day of the week in which metrics are calculated</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:112.1pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:107.6pt;">customer_id&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:1.0in;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:211.5pt;">
+          <p style="text-align:center;">Customer ID</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:112.1pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:107.6pt;">cust_loyalty_member&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:1.0in;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:211.5pt;">
+          <p style="text-align:center;">Customer who owns a AEO rewards credit card</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:112.1pt;">
+          <p style="text-align:center;">Loyalty Member KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:107.6pt;">cust_loyalty_type&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:1.0in;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:211.5pt;">
+          <p style="text-align:center;">Membership tier</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:112.1pt;">
+          <p style="text-align:center;">Loyalty Type KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:107.6pt;">cust_recency&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:1.0in;">
+          <p style="text-align:center;">int</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:211.5pt;">
+          <p style="text-align:center;">Days since the last purchase</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:112.1pt;">
+          <p style="text-align:center;">Recency KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:107.6pt;">cust_frequency&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:1.0in;">
+          <p style="text-align:center;">int</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:211.5pt;">
+          <p style="text-align:center;">No. of transactions in the last one year</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:112.1pt;">
+          <p style="text-align:center;">Frequency KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:107.6pt;">cust_spends&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:1.0in;">
+          <p style="text-align:center;">double</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:211.5pt;">
+          <p style="text-align:center;">Annual spends</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:112.1pt;">
+          <p style="text-align:center;">Customer Spends KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:107.6pt;">cust_tap_rate&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:1.0in;">
+          <p style="text-align:center;">int</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:211.5pt;">
+          <p style="text-align:center;">Total no. of distinct item types &amp; SKUs purchased</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:112.1pt;">
+          <p style="text-align:center;">Tap Rate KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:107.6pt;">cust_avg_order_gap&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:1.0in;">
+          <p style="text-align:center;">int</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:211.5pt;">
+          <p style="text-align:center;">Days between purchases. First transaction date and last transaction date divided by the total no. of transactions made.</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:112.1pt;">
+          <p style="text-align:center;">Average Order Gap KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:107.6pt;">cust_active_inactive_status&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:1.0in;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:211.5pt;">
+          <p style="text-align:center;">Customers are deemed inactive if their last transaction is not made in the last 90 days.</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:112.1pt;">
+          <p style="text-align:center;">Active Inactive KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:107.6pt;">cust_new_existing&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:1.0in;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:211.5pt;">
+          <p style="text-align:center;">Customers who made their first transaction in the last 90 days are new customers. Existing customers are those who have made more than one transaction</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:112.1pt;">
+          <p style="text-align:center;">New Existing KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:107.6pt;">cust_tenure&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:1.0in;">
+          <p style="text-align:center;">int</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:211.5pt;">
+          <p style="text-align:center;">Days since the first purchase</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:112.1pt;">
+          <p style="text-align:center;">Customer Tenure KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:107.6pt;">cust_savings_discounts&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:1.0in;">
+          <p style="text-align:center;">double</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:211.5pt;">
+          <p style="text-align:center;">Total Discounts &amp; Promotions &amp; Rewards applied across purchases &amp; their percentages compared to total sales</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:112.1pt;">
+          <p style="text-align:center;">Savings Discounts KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:107.6pt;">cust_bulk_item&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:1.0in;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:211.5pt;">
+          <p style="text-align:center;">Average Basket Size and Average basket value is 95 Percentile. Top 5 percentile would fall under this</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:112.1pt;">
+          <p style="text-align:center;">Bulk Item KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:107.6pt;">cust_life_time_avg_order_value&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:1.0in;">
+          <p style="text-align:center;">int</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:211.5pt;">
+          <p style="text-align:center;">Sum of all sales / Count of all orders at customer level</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:112.1pt;">
+          <p style="text-align:center;">Lifetime Average Order Value KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:107.6pt;">cust_life_time_total_items&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:1.0in;">
+          <p style="text-align:center;">int</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:211.5pt;">
+          <p style="text-align:center;">Count of Units purchased at customer level</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:112.1pt;">
+          <p style="text-align:center;">Lifetime Total Items KPI</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+<p>&nbsp;</p>
+<h6>Customer - Demographics</h6>
+<figure class="table" style="width:503.6pt;">
+  <table style="border-bottom:5px solid hsl(0, 0%, 0%);border-left:5px solid hsl(0, 0%, 0%);border-right:5px solid hsl(0, 0%, 0%);border-top:5px solid hsl(0, 0%, 0%);">
+    <thead>
+      <tr>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:107.6pt;"><strong>Column Name</strong>&nbsp;</th>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:76.5pt;">
+          <p style="text-align:center;"><strong>Data Type</strong></p>
+        </th>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:207.0pt;">
+          <p style="text-align:center;"><strong>Description</strong></p>
+        </th>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:112.5pt;">
+          <p style="text-align:center;"><strong>KPI</strong></p>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:107.6pt;">customer_id&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:76.5pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:207.0pt;">
+          <p style="text-align:center;">Customer ID</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:112.5pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:107.6pt;">cust_age&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:76.5pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:207.0pt;">
+          <p style="text-align:center;">Generation-bucket they belong to</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:112.5pt;">
+          <p style="text-align:center;">Age KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:107.6pt;">cust_income&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:76.5pt;">
+          <p style="text-align:center;">double</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:207.0pt;">
+          <p style="text-align:center;">Annual family Income</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:112.5pt;">
+          <p style="text-align:center;">Income KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:107.6pt;">cust_gender&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:76.5pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:207.0pt;">
+          <p style="text-align:center;">Customer Gender</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:112.5pt;">
+          <p style="text-align:center;">Gender KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:107.6pt;">cust_occupation&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:76.5pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:207.0pt;">
+          <p style="text-align:center;">Student, Desk Workers, White collar employees</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:112.5pt;">
+          <p style="text-align:center;">Occupation KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:107.6pt;">cust_marital_status&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:76.5pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:207.0pt;">
+          <p style="text-align:center;">Marital status</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:112.5pt;">
+          <p style="text-align:center;">Marital Status KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:107.6pt;">cust_urbanicity&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:76.5pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:207.0pt;">
+          <p style="text-align:center;">Urban, Rural, Semi-urban</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:112.5pt;">
+          <p style="text-align:center;">Urbanicity KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:107.6pt;">cust_commute&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:76.5pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:207.0pt;">
+          <p style="text-align:center;">Is the customer commuting to office by Public Transport</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:112.5pt;">
+          <p style="text-align:center;">Commute KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:107.6pt;">cust_has_kids&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:76.5pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:207.0pt;">
+          <p style="text-align:center;">The number kids a customer has</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:112.5pt;">
+          <p style="text-align:center;">Kids KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:107.6pt;">cust_ethnicity&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:76.5pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:207.0pt;">
+          <p style="text-align:center;">Latino, Black, Caucasian, Indian, Chinese</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:112.5pt;">
+          <p style="text-align:center;">Ethnicity KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:107.6pt;">cust_hh_size&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:76.5pt;">
+          <p style="text-align:center;">int</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:207.0pt;">
+          <p style="text-align:center;">House-hold size</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:112.5pt;">
+          <p style="text-align:center;">House-hold Size KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:107.6pt;">cust_house_location&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:76.5pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:207.0pt;">
+          <p style="text-align:center;">House zip location</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:112.5pt;">
+          <p style="text-align:center;">House-Location KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:107.6pt;">
+          <p>cust_distance_to_</p>
+          <p>favourite_store&nbsp;</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:76.5pt;">
+          <p style="text-align:center;">int</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:207.0pt;">
+          <p style="text-align:center;">Distance from the store where the customer transacts most (favorite store)</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:112.5pt;">
+          <p style="text-align:center;">Distance to Fav Store KPI</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+<p>&nbsp;</p>
+<h6>Customer - Preferences</h6>
+<figure class="table" style="width:503.2pt;">
+  <table style="border-bottom:5px solid hsl(0, 0%, 0%);border-left:5px solid hsl(0, 0%, 0%);border-right:5px solid hsl(0, 0%, 0%);border-top:5px solid hsl(0, 0%, 0%);">
+    <thead>
+      <tr>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;"><strong>Column Name</strong>&nbsp;</th>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;">
+          <p style="text-align:center;"><strong>Data Type</strong></p>
+        </th>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;">
+          <p style="text-align:center;"><strong>Description</strong></p>
+        </th>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;">
+          <p style="text-align:center;"><strong>KPI</strong></p>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:121.1pt;">week_nbr&nbsp;&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:67.5pt;">
+          <p style="text-align:center;">int</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:202.5pt;">
+          <p style="text-align:center;">Week-Number of the Metric calculation</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:112.1pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:121.1pt;">last_day_of_week&nbsp;&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:67.5pt;">
+          <p style="text-align:center;">date</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:202.5pt;">
+          <p style="text-align:center;">Last day of the week in which metrics are calculated</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:112.1pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:121.1pt;">customer_id&nbsp;&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:67.5pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:202.5pt;">
+          <p style="text-align:center;">Customer ID</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:112.1pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:121.1pt;">app_customer_flag&nbsp;&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:67.5pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:202.5pt;">
+          <p style="text-align:center;">A Flag to represent customers who use Mobile App (Android or iOS) for making purchases 65% of the time.</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:112.1pt;">
+          <p style="text-align:center;">App Flag KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:121.1pt;">desktop_customer_flag&nbsp;&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:67.5pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:202.5pt;">
+          <p style="text-align:center;">A Flag to represent customers who use Web or Desktop for making purchases 65% of the time.</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:112.1pt;">
+          <p style="text-align:center;">Desktop Flag KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:121.1pt;">cust_login_flag&nbsp;&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:67.5pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:202.5pt;">
+          <p style="text-align:center;">A Flag to represent customers who are typically logged in while browsing through the website.</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:112.1pt;">
+          <p style="text-align:center;">Login Flag KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:121.1pt;">cust_store_of_choice&nbsp;&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:67.5pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:202.5pt;">
+          <p style="text-align:center;">Customer’s most visited store in the last 24 months period.</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:112.1pt;">
+          <p style="text-align:center;">Store of Choice KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:121.1pt;">cust_channel_preference_score&nbsp;&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:67.5pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:202.5pt;">
+          <p style="text-align:center;">A score given to each Channel for a unique combination of Customer ID and Category ID taking into consideration a customer’s transaction and browsing (clickstream) history with 80% and 20% weightage respectively</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:112.1pt;">
+          <p style="text-align:center;">Channel Preference KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:121.1pt;">cust_fav_categories_score&nbsp;&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:67.5pt;">
+          <p style="text-align:center;">int</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:202.5pt;">
+          <p style="text-align:center;">A score given to each Category for a unique combination of Customer ID and Category ID taking into consideration a customer’s transaction and browsing (clickstream) history with 80% and 20% weightage respectively</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:112.1pt;">
+          <p style="text-align:center;">Favorite Category Score KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:121.1pt;">cust_color_preference_score</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:67.5pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:202.5pt;">
+          <p style="text-align:center;">A score given to each Color for a unique combination of Customer ID and Category ID taking into consideration a customer’s transaction and browsing (clickstream) history with 80% and 20% weightage respectively</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:112.1pt;">
+          <p style="text-align:center;">Color Preference Score KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:121.1pt;">cust_fit_preference_score</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:67.5pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:202.5pt;">
+          <p style="text-align:center;">A score given to each Fit for a unique combination of Customer ID and Category ID taking into consideration a customer’s transaction and browsing (clickstream) history with 80% and 20% weightage respectively</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:112.1pt;">
+          <p style="text-align:center;">Fit Preference Score KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:121.1pt;">cust_style_preference_score&nbsp;&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:67.5pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:202.5pt;">
+          <p style="text-align:center;">A score given to each Style for a unique combination of Customer ID and Category ID taking into consideration a customer’s transaction and browsing (clickstream) history with 80% and 20% weightage respectively</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:112.1pt;">
+          <p style="text-align:center;">Style Preference Score KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:121.1pt;">cust_size_preference_score&nbsp;&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:67.5pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:202.5pt;">
+          <p style="text-align:center;">A score given to each Size for a unique combination of Customer ID and Category ID taking into consideration a customer’s transaction and browsing (clickstream) history with 80% and 20% weightage respectively</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:112.1pt;">
+          <p style="text-align:center;">Size Preference Score KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:121.1pt;">premium_buyer&nbsp;&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:67.5pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:202.5pt;">
+          <p style="text-align:center;">A customer is a premium buyer if they buy at least one Premium Product in any of the Categories</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:112.1pt;">
+          <p style="text-align:center;">Premium Buyer KPI</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+<p>&nbsp;</p>
+<h6>Customer - Digital</h6>
+<figure class="table">
+  <table style="border-bottom:5px solid hsl(0, 0%, 0%);border-left:5px solid hsl(0, 0%, 0%);border-right:5px solid hsl(0, 0%, 0%);border-top:5px solid hsl(0, 0%, 0%);">
+    <thead>
+      <tr>
+        <th style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);padding:0in;width:121.1pt;"><strong>Column Name</strong>&nbsp;</th>
+        <th style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);padding:0in;width:67.5pt;">
+          <p style="text-align:center;"><strong>Data Type</strong></p>
+        </th>
+        <th style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);padding:0in;width:202.5pt;">
+          <p style="text-align:center;"><strong>Description</strong></p>
+        </th>
+        <th style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);padding:0in;width:112.1pt;">
+          <p style="text-align:center;"><strong>KPI</strong></p>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:121.1pt;">week_nbr&nbsp;</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:67.5pt;">
+          <p style="text-align:center;">integer</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:202.5pt;">
+          <p style="text-align:center;">Week-Number of the Metric calculation</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:112.1pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:121.1pt;">last_day_of_week&nbsp;</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:67.5pt;">
+          <p style="text-align:center;">date</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:202.5pt;">
+          <p style="text-align:center;">Last day of the week in which metrics are calculated</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:112.1pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:121.1pt;">customer_id&nbsp;</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:67.5pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:202.5pt;">
+          <p style="text-align:center;">Customer ID</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:112.1pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:121.1pt;">cust_casual_browser&nbsp;</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:67.5pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:202.5pt;">
+          <p style="text-align:center;">Customers with multiple visits to the website without an agenda to purchase but to be updated with various style options</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:112.1pt;">
+          <p style="text-align:center;">Casual Brower KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:121.1pt;">cust_impulsive_buyer&nbsp;</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:67.5pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:202.5pt;">
+          <p style="text-align:center;">Customers who begin and end the session quickly and purchase using faster check out options such as apple pay etc.,</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:112.1pt;">
+          <p style="text-align:center;">Impulsive Buyer KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:121.1pt;">cust_inspired_by_visuals&nbsp;</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:67.5pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:202.5pt;">
+          <p style="text-align:center;">Customers who check and spent time on different pictures and are constantly inspired by visuals for their style choices. Image clicks / Total Clicks</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:112.1pt;">
+          <p style="text-align:center;">Inspired by Visuals KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:121.1pt;">cust_open_to_recommendations&nbsp;</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:67.5pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:202.5pt;">
+          <p style="text-align:center;">Customers who click on suggested items on the website and purchase. Customers clicking on frequently bought together</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:112.1pt;">
+          <p style="text-align:center;">Open to Recommendations KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:121.1pt;">cust_goal_oriented&nbsp;</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:67.5pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:202.5pt;">
+          <p style="text-align:center;">Customers who come for a specific product and search till then find the item of choice and then checkout. They immediately exit if they don’t find what they need</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:112.1pt;">
+          <p style="text-align:center;">Goal Oriented KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:121.1pt;">cust_minimal_app_usage&nbsp;</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:67.5pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:202.5pt;">
+          <p style="text-align:center;">Customers who have installed the App, but no order has been placed in the 6 months and no clickstream sessions activity.</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:112.1pt;">
+          <p style="text-align:center;">Minimal App Usage KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:121.1pt;">cust_risk_averse&nbsp;</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:67.5pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:202.5pt;">
+          <p style="text-align:center;">Customers who don’t purchase any new item without reading reviews and feedback.</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:112.1pt;">
+          <p style="text-align:center;">Risk Averse KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:121.1pt;">cust_impatient_browser&nbsp;</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:67.5pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:202.5pt;">
+          <p style="text-align:center;">Customers who spend very less amount of time on the website/app across pages and exits. Customer’s sessions having a lot of bounce rates / total sessions of the customer.</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:112.1pt;">
+          <p style="text-align:center;">Impatient Browser KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:1.0pt solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:1.0pt solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:121.1pt;">cust_online_heavy_user&nbsp;</td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:67.5pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:202.5pt;">
+          <p style="text-align:center;">Customers who have an average session time above 1.5* (average session time of all app/web users)</p>
+        </td>
+        <td style="border-bottom:1.0pt solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:1.0pt solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:112.1pt;">
+          <p style="text-align:center;">Online heavy User KPI</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+<p>&nbsp;</p>
+<h6>Customer - Lifestyle</h6>
+<figure class="table" style="width:503.2pt;">
+  <table style="border-bottom:5px solid hsl(0, 0%, 0%);border-left:5px solid hsl(0, 0%, 0%);border-right:5px solid hsl(0, 0%, 0%);border-top:5px solid hsl(0, 0%, 0%);">
+    <thead>
+      <tr>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:120.2pt;"><strong>Column Name</strong>&nbsp;</th>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:.95in;">
+          <p style="text-align:center;"><strong>Data Type</strong></p>
+        </th>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:202.5pt;">
+          <p style="text-align:center;"><strong>Description</strong></p>
+        </th>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:112.1pt;">
+          <p style="text-align:center;"><strong>KPI</strong></p>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:120.2pt;">week_nbr&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:.95in;">
+          <p style="text-align:center;">integer</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:202.5pt;">
+          <p style="text-align:center;">Week-Number of the Metric calculation</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:112.1pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:120.2pt;">last_day_of_week&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:.95in;">
+          <p style="text-align:center;">date</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:202.5pt;">
+          <p style="text-align:center;">Last day of the week in which metrics are calculated</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:112.1pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:120.2pt;">customer_id&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:.95in;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:202.5pt;">
+          <p style="text-align:center;">Customer ID</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:112.1pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:120.2pt;">cust_thrifty_deal_seeking&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:.95in;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:202.5pt;">
+          <p style="text-align:center;">Customers who use Coupons to make Purchases more than 50% of the time</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:112.1pt;">
+          <p style="text-align:center;">Thrifty Deal Seeking KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:120.2pt;">cust_fashionista&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:.95in;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:202.5pt;">
+          <p style="text-align:center;">Customers who are open to try out newly launched products (threshold is 60 days) in more than 50% of the purchases.</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:112.1pt;">
+          <p style="text-align:center;">Fashionista KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:120.2pt;">cust_conservative&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:.95in;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:202.5pt;">
+          <p style="text-align:center;">Customers who stick to basics and aren’t open to changing color, style, or design</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:112.1pt;">
+          <p style="text-align:center;">Conservative KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:120.2pt;">cust_easy_returns&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:.95in;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:202.5pt;">
+          <p style="text-align:center;">Customers who order multiple items and return either in stores or through carrier services</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:112.1pt;">
+          <p style="text-align:center;">Easy Returns KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:120.2pt;">cust_time_sesitive&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:.95in;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:202.5pt;">
+          <p style="text-align:center;">Customers who want faster shipment methods, typically visits, or purchases only when they really need them</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:112.1pt;">
+          <p style="text-align:center;">Time Sensitive KPI</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+<p>&nbsp;</p>
+<h6>Customer - Marketing</h6>
+<figure class="table" style="width:503.2pt;">
+  <table style="border-bottom:5px solid hsl(0, 0%, 0%);border-left:5px solid hsl(0, 0%, 0%);border-right:5px solid hsl(0, 0%, 0%);border-top:5px solid hsl(0, 0%, 0%);">
+    <thead>
+      <tr>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:121.1pt;">
+          <p style="text-align:center;"><strong>Column Name</strong></p>
+        </th>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:63.0pt;">
+          <p style="text-align:center;"><strong>Data Type</strong></p>
+        </th>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:189.75pt;">
+          <p style="text-align:center;"><strong>Description</strong></p>
+        </th>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:129.35pt;">
+          <p style="text-align:center;"><strong>KPI</strong></p>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:121.1pt;">week_nbr&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:63.0pt;">
+          <p style="text-align:center;">integer</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:189.75pt;">
+          <p style="text-align:center;">Week-Number of the Metric calculation</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:129.35pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:121.1pt;">last_day_of_week&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:63.0pt;">
+          <p style="text-align:center;">date</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:189.75pt;">
+          <p style="text-align:center;">Last day of the week in which metrics are calculated</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:129.35pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:121.1pt;">customer_id&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:63.0pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:189.75pt;">
+          <p style="text-align:center;">Customer ID</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:129.35pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:121.1pt;">mrktg_chnnl_preference&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:63.0pt;">
+          <p style="text-align:center;">String</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:189.75pt;">
+          <p style="text-align:center;">web traffic source for each visit, marketing partner column</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:129.35pt;">
+          <p style="text-align:center;">Marketing Channel Preference KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:121.1pt;">cross_chnnl_cnt&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:63.0pt;">
+          <p style="text-align:center;">Int</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:189.75pt;">
+          <p style="text-align:center;">Count of Distinct Campaign channels the customer has entered to perform activity in AEO Web/App</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:129.35pt;">
+          <p style="text-align:center;">Cross Channel KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:121.1pt;">email_list&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:63.0pt;">
+          <p style="text-align:center;">String</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:189.75pt;">
+          <p style="text-align:center;">Valid distinct emails for the same customer ID</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:129.35pt;">
+          <p style="text-align:center;">Email List KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:121.1pt;">Days_since_email_trigger&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:63.0pt;">
+          <p style="text-align:center;">Double</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:189.75pt;">
+          <p style="text-align:center;">Identifies how long it’s been since a customer is triggered by a marketing partner to do Web/app activity</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:129.35pt;">
+          <p style="text-align:center;">Days Since Email Trigger KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:121.1pt;">Email_open_rate&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:63.0pt;">
+          <p style="text-align:center;">Double</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:189.75pt;">
+          <p style="text-align:center;">How many emails Opened after being sent? The Variable will be a relative showcase wither in Decile scores or Buckets like (High, medium, and low)</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:129.35pt;">
+          <p style="text-align:center;">Email Open Rate KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:121.1pt;">Email_ctr_rating&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:63.0pt;">
+          <p style="text-align:center;">Double</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:189.75pt;">
+          <p style="text-align:center;">How many emails clicking after being opened? The Variable will be a relative showcase wither in Decile scores or Buckets like (High, medium, and low)</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:129.35pt;">
+          <p style="text-align:center;">Email CTR Rating KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:121.1pt;">Avg_comm_freq&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:63.0pt;">
+          <p style="text-align:center;">Double</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:189.75pt;">
+          <p style="text-align:center;">Frequency with which the customer had been contacted&nbsp;- Email and Text</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:129.35pt;">
+          <p style="text-align:center;">Average Communication Frequency KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:121.1pt;">Coupon_redemption_rate&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:63.0pt;">
+          <p style="text-align:center;">Double</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:189.75pt;">
+          <p style="text-align:center;">Number of coupons utilized in purchasing/ Number of coupons received&nbsp;</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:129.35pt;">
+          <p style="text-align:center;">Coupon Redemption Rate KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:121.1pt;">Engaged_conversion_rate&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:63.0pt;">
+          <p style="text-align:center;">double</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:189.75pt;">
+          <p style="text-align:center;">Customers who purchase after marketing trigger</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:129.35pt;">
+          <p style="text-align:center;">Engaged Conversion Rate KPI</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+<p>&nbsp;</p>
+<h6>Customer</h6>
+<figure class="table" style="width:503.2pt;">
+  <table style="border-bottom:5px solid hsl(0, 0%, 0%);border-left:5px solid hsl(0, 0%, 0%);border-right:5px solid hsl(0, 0%, 0%);border-top:5px solid hsl(0, 0%, 0%);">
+    <thead>
+      <tr>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:135.5pt;"><strong>Column Name</strong>&nbsp;</th>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:53.1pt;">
+          <p style="text-align:center;"><strong>Data Type</strong></p>
+        </th>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:237.55pt;">
+          <p style="text-align:center;"><strong>Description</strong></p>
+        </th>
+        <th style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;width:77.05pt;">
+          <p style="text-align:center;"><strong>KPI</strong></p>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:135.5pt;">week_nbr&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:53.1pt;">
+          <p style="text-align:center;">integer</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:237.55pt;">
+          <p style="text-align:center;">Week-Number of the Metric calculation</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:77.05pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:135.5pt;">last_day_of_week&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:53.1pt;">
+          <p style="text-align:center;">date</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:237.55pt;">
+          <p style="text-align:center;">Last day of the week in which metrics are calculated</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:77.05pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:135.5pt;">customer_id&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:53.1pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:237.55pt;">
+          <p style="text-align:center;">Customer ID</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:77.05pt;">
+          <p style="text-align:center;">-</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:135.5pt;">cust_app_installed&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:53.1pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:237.55pt;">
+          <p style="text-align:center;">customers who use Mobile App for making purchases 65% of the time.</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:77.05pt;">
+          <p style="text-align:center;">App Flag KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:135.5pt;">cust_app_purchase&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:53.1pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:237.55pt;">
+          <p style="text-align:center;">Customers who purchase products through apps &nbsp;more than 50% of the time(Android and iOS)</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:77.05pt;">
+          <p style="text-align:center;">App Purchase KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:135.5pt;">cust_desktop&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:53.1pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:237.55pt;">
+          <p style="text-align:center;">Customers who use Web or Desktop for making purchases 65% of the time.</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:77.05pt;">
+          <p style="text-align:center;">Desktop Flag KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:135.5pt;">cust_guest_login&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:53.1pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:237.55pt;">
+          <p style="text-align:center;">Customers who are typically logged in while browsing the website</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:77.05pt;">
+          <p style="text-align:center;">Login Flag KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:135.5pt;">cust_store_of_choice&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:53.1pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:237.55pt;">
+          <p style="text-align:center;">Customer’s most visited store in the last 24 months period.</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:77.05pt;">
+          <p style="text-align:center;">Store of Choice KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:135.5pt;">cust_self_family_usage&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:53.1pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:237.55pt;">
+          <p style="text-align:center;">Customers who order a rich variety of clothes for the family not just for self-consumption</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:77.05pt;">
+          <p style="text-align:center;">Self-Family Usage KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:135.5pt;">cust_store_omnichannel&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:53.1pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:237.55pt;">
+          <p style="text-align:center;">Is the Customer store only, omnichannel, or online only</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:77.05pt;">
+          <p style="text-align:center;">Omnichannel KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:135.5pt;">
+          <p>cust_channel_preference</p>
+          <p>_score&nbsp;</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:53.1pt;">
+          <p style="text-align:center;">float</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:237.55pt;">
+          <p style="text-align:center;">Customers’ preference to visit store, order online picks in store, vs gets the order delivered</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:77.05pt;">
+          <p style="text-align:center;">Channel Preference KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:135.5pt;">cust_favourite_category&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:53.1pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:237.55pt;">
+          <p style="text-align:center;">The number of favorite categories mentioned by the customer from the app or web.</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:77.05pt;">
+          <p style="text-align:center;">Favorite Categories KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:135.5pt;">
+          <p>cust_payment_preference</p>
+          <p>_score&nbsp;</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:53.1pt;">
+          <p style="text-align:center;">float</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:237.55pt;">
+          <p style="text-align:center;">Most used payment tender type - Cash/COD, AfterPay, Paypal, EBT, SNAP, Credit, Debit etc.</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:77.05pt;">
+          <p style="text-align:center;">Payment Preference KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:135.5pt;">cust_customer_csat_nps&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:53.1pt;">
+          <p style="text-align:center;">float</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:237.55pt;">
+          <p style="text-align:center;">Average LTR (Likelihood to Recommend) Ratings given by customer</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:77.05pt;">
+          <p style="text-align:center;">Average LTR KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:39.3pt;padding:0in;vertical-align:bottom;width:135.5pt;">
+          <p>cust_preferred_month_of</p>
+          <p>_purchase&nbsp;</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:39.3pt;padding:0in;vertical-align:bottom;width:53.1pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:39.3pt;padding:0in;vertical-align:top;width:237.55pt;">
+          <p style="text-align:center;">Based on historical data, any specific Month of the year when customer buys more</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);height:39.3pt;padding:0in;vertical-align:top;width:77.05pt;">
+          <p style="text-align:center;">Preferred Month KPI</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:135.5pt;">cust_preferred_day_of_week&nbsp;</td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:bottom;width:53.1pt;">
+          <p style="text-align:center;">string</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:237.55pt;">
+          <p style="text-align:center;">Based on historical data, any specific Day(s) of the Week when customer buys more</p>
+        </td>
+        <td style="border-bottom:solid hsl(0, 0%, 0%);border-left:solid hsl(0, 0%, 0%);border-right:solid hsl(0, 0%, 0%);border-top:solid hsl(0, 0%, 0%);padding:0in;vertical-align:top;width:77.05pt;">
+          <p style="text-align:center;">Preferred Day KPI</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>

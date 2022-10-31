@@ -1,0 +1,169 @@
+<!--
+title: How to upload Assets
+description: 
+published: true
+date: 2022-10-28T13:38:34.813Z
+tags: atom
+editor: ckeditor
+dateCreated: 2022-10-21T12:54:58.859Z
+-->
+
+<p>&nbsp;</p>
+<figure class="image"><img src="/atom/picture1.svg"></figure>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span class="text-big"><strong>User Documentation</strong></span></p>
+<h1>How to Upload Assets?</h1>
+<p><span class="text-big"><strong>Atom.AI</strong></span></p>
+<figure class="image"><img src="/atom/common_photos.png"></figure>
+<p>&nbsp;</p>
+<h2>Workflow diagram&nbsp;</h2>
+<figure class="image"><img src="/atom/how_to_upload_assets/1.svg"></figure>
+<h2><strong>USER ACTION REQUIRED</strong></h2>
+<ul>
+  <li><strong>UPLOAD ASSETS</strong></li>
+</ul>
+<ol>
+  <li>Upload<strong>&nbsp;</strong>Zip file</li>
+  <li>Add metadata and Submit<ol>
+      <li>System will load it into Blob storage - Stagging DB</li>
+    </ol>
+  </li>
+</ol>
+<h2><strong>ADMIN ACTION REQUIRED</strong></h2>
+<ul>
+  <li><strong>DATA SANITIZATION</strong></li>
+</ul>
+<ol>
+  <li>Sanitize the raw data in Stagging DB</li>
+  <li>Transfer the sanitized data into Sanitized DB</li>
+</ol>
+<ul>
+  <li><strong>AZURE GIT REPOSITORY</strong></li>
+</ul>
+<ol>
+  <li>Copies into Reusable asset repository</li>
+  <li>Get the URL of new location</li>
+</ol>
+<ul>
+  <li><strong>HASURA DATABASE</strong></li>
+</ul>
+<ol>
+  <li>Fills the metadata table in the database</li>
+  <li>Key tables – (artifact_link_details, artifact_moat_ref, artifact_tag, <strong>forth</strong>)<ol>
+      <li>Data will auto-sync with Atom discover</li>
+    </ol>
+  </li>
+</ol>
+<p>&nbsp;</p>
+<ul>
+  <li><strong>UPLOAD ASSETS (user action)</strong></li>
+</ul>
+<p>&nbsp; &nbsp; &nbsp; Navigation –&nbsp;Atom.AI</p>
+<p>&nbsp; &nbsp; &nbsp; Link –&nbsp;<a href="https://studioplatform.tredence.com/moat/home">Click here</a>&nbsp;</p>
+<p>Click on My Workspace from the home page of Atom.Ai</p>
+<figure class="image"><img src="/atom/discover_atom/3.png"></figure>
+<p>&nbsp; &nbsp; &nbsp; Navigation –&nbsp;Atom.AI&nbsp;⇢ My Workspace</p>
+<p>&nbsp; &nbsp; &nbsp; Link –&nbsp;<a href="https://studioplatform.tredence.com/my-workspace">Click here</a></p>
+<p>In the My Workspace window, click on My Assets tab to upload your assets on Atom.Ai.</p>
+<figure class="image"><img src="/atom/how_to_upload_assets/1.png"></figure>
+<p>&nbsp; &nbsp; &nbsp; Navigation –&nbsp;Atom.AI&nbsp;⇢ My Workspace&nbsp;⇢ My Assets</p>
+<p>&nbsp; &nbsp; &nbsp; Link –&nbsp;<a href="https://studioplatform.tredence.com/my-workspace">Click here</a></p>
+<p>Click on upload file option in the My Assets window.</p>
+<figure class="image"><img src="/atom/how_to_upload_assets/2.png"></figure>
+<p>&nbsp; &nbsp; &nbsp; Navigation –&nbsp;Atom.AI&nbsp;⇢ My Workspace&nbsp;⇢ My Assets&nbsp;⇢ Upload Assets</p>
+<p>&nbsp; &nbsp; &nbsp; Link –&nbsp;<a href="https://studioplatform.tredence.com/my-workspace/assets/upload">Click here</a></p>
+<figure class="image"><img src="/atom/how_to_upload_assets/3.png"></figure>
+<p>&nbsp; &nbsp; &nbsp; Navigation –&nbsp;Atom.AI&nbsp;⇢ My Workspace&nbsp;⇢ My Assets&nbsp;⇢ Upload Assets&nbsp;⇢ ML Algo</p>
+<p>&nbsp; &nbsp; &nbsp; Link –&nbsp;<a href="https://studioplatform.tredence.com/my-workspace/assets/upload">Click here</a></p>
+<p>If you click on the ML Algo, the following window will pop-up to fill the details of the file and upload a single zip file by clicking anywhere in the box encircled in the following image.</p>
+<figure class="image"><img src="/atom/how_to_upload_assets/4.png"></figure>
+<ol>
+  <li>Fill up the text-box (to upload single ML Algo) : user action required.</li>
+  <li>Upload (single) Zip files (ML Algo Notebook)</li>
+  <li>Asset Name : Mandatory</li>
+  <li>Asset Type : Auto-populate as ML Algo</li>
+  <li>Linked Data Model : Optional</li>
+  <li>Linked Solution : Optional</li>
+  <li>Feature Entity : Optional</li>
+  <li>Description : Optional</li>
+  <li>Tags : Please enter your vertical and practice keywords</li>
+</ol>
+<p>&nbsp;</p>
+<ul>
+  <li><strong>DATA SANITIZATION (admin action)</strong></li>
+</ul>
+<p>Admin has to follow certain&nbsp;processes of fixing or removing incorrect, corrupted, incorrectly formatted, duplicate, or incomplete data within a dataset. Because when combining multiple data sources, there are many opportunities for data to be duplicated or mislabeled. If data is incorrect, outcomes and algorithms are unreliable, even though they may look correct. Admin needs to examine the datasets&nbsp;clear fully&nbsp;and identify steps to sanitize and clean - no one absolute way to prescribe the exact steps in the data cleaning process because the processes will vary from dataset to dataset. But it is crucial to establish a template for your data sanitization and cleaning process so your ML teams will do it the right way every time.</p>
+<ul>
+  <li><strong>AZURE GIT REPOSITORY (admin action)&nbsp;</strong>to know more –&nbsp;<a href="https://azure.microsoft.com/en-us/products/devops/#overview">click here</a></li>
+</ul>
+<p>&nbsp; &nbsp; &nbsp; Navigation –&nbsp;Azure DevOps&nbsp;⇢ Studio-Platform-Reusable-Assets&nbsp;⇢ ml-ai-accelerators-sanitized</p>
+<p>&nbsp; &nbsp; &nbsp; Link –&nbsp;<a href="https://dev.azure.com/Studio-Org/Studio-Platform-Reusable-Assets/_git/Studio-Platform-Reusable-Assets?path=/ml-ai-accelerators-sanitized">click here</a></p>
+<ol>
+  <li><strong>Steps to copy into Azure Reusable Asset Repository : ex – Arima-master</strong>
+    <ol>
+      <li>Goto Studio-Platform-Reusable-Assets page from Azure DevOps</li>
+    </ol>
+  </li>
+</ol>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Navigation –&nbsp;Azure DevOps&nbsp;⇢ Studio-Platform-Reusable-Assets&nbsp;⇢ ml-ai-accelerators-sanitized</p>
+<p>&nbsp; &nbsp; &nbsp; 2. Then click on ml-ai-accelerators-sanitized folder from the left panel</p>
+<p>&nbsp; &nbsp; &nbsp; 3. Now, you can see an option of New with a + symbol to create a folder and file</p>
+<figure class="image"><img src="/atom/how_to_upload_assets/5.png"></figure>
+<p>&nbsp; &nbsp; &nbsp; 4. Now create a folder where you wanted to upload the files, you can also select any existing folder.</p>
+<p>&nbsp; &nbsp; &nbsp; 5. After creating the folder you can upload file in the folder by selecting the required files, you can give any comment and write the Branch Name as master.</p>
+<figure class="image"><img src="/atom/how_to_upload_assets/6.png"></figure>
+<p>&nbsp; &nbsp; &nbsp; 6. Click on commit to upload the file</p>
+<p>2. <strong>Steps to get the URL of new location : ex – Arima-master</strong></p>
+<p>Navigation –&nbsp;Azure DevOps&nbsp;⇢ Studio-Platform-Reusable-Assets&nbsp;⇢ ml-ai-accelerators-sanitized&nbsp;⇢ Arima-master</p>
+<p>&nbsp; &nbsp; &nbsp; 1. Copy the URL from the browser.</p>
+<figure class="image"><img src="/atom/how_to_upload_assets/7.png"></figure>
+<p>&nbsp; &nbsp;&nbsp;</p>
+<ul>
+  <li><strong>HASURA DATABASE (admin action)&nbsp;</strong></li>
+</ul>
+<p>&nbsp; &nbsp; &nbsp; Navigation –&nbsp;Hasura&nbsp;⇢ Console à Data&nbsp;⇢ Databases à studio</p>
+<p>&nbsp; &nbsp; &nbsp; Table details -</p>
+<p>&nbsp; &nbsp; &nbsp; 1. artifact_link_details</p>
+<p>&nbsp; &nbsp; &nbsp; 2. artifact_moat_ref</p>
+<p>&nbsp; &nbsp; &nbsp; 3. artifact_provision_details</p>
+<p>&nbsp; &nbsp; &nbsp; 4. artifact_tag</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<figure class="table">
+  <table>
+    <tbody>
+      <tr>
+        <td style="background-color:#F2F2F2;border-bottom:1.0pt solid windowtext;border-left:1.0pt solid windowtext;border-right:1.0pt solid windowtext;border-top:1.0pt solid windowtext;padding:5.75pt;width:164.95pt;">
+          <p style="text-align:justify;">Created By:</p>
+        </td>
+        <td style="background-color:white;border-bottom:1.0pt solid windowtext;border-left:1.0pt none windowtext;border-right:1.0pt solid windowtext;border-top:1.0pt solid windowtext;padding:5.75pt;width:187.55pt;">
+          <p style="text-align:justify;">yatharth.gupta@tredence.com</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="background-color:#F2F2F2;border-bottom:1.0pt solid windowtext;border-left:1.0pt solid windowtext;border-right:1.0pt solid windowtext;border-top:1.0pt none windowtext;padding:5.75pt;vertical-align:top;width:164.95pt;">
+          <p style="text-align:justify;">Reviewed By:</p>
+        </td>
+        <td style="background-color:white;border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;padding:5.75pt;vertical-align:top;width:187.55pt;">
+          <p style="text-align:justify;">sunil.ranganathan@tredence.com</p>
+          <p style="text-align:justify;">balaji.makam@tredence.com</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="background-color:#F2F2F2;border-bottom:1.0pt solid windowtext;border-left:1.0pt solid windowtext;border-right:1.0pt solid windowtext;border-top:1.0pt none windowtext;padding:5.75pt;vertical-align:top;width:164.95pt;">
+          <p style="text-align:justify;">Approved By:</p>
+        </td>
+        <td style="background-color:white;border-bottom:1.0pt solid windowtext;border-left:none;border-right:1.0pt solid windowtext;border-top:none;padding:5.75pt;vertical-align:top;width:187.55pt;">
+          <p style="text-align:justify;">bhairab.singh@tredence.com</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Thank you</strong></p>
+<hr>
+<figure class="image"><img src="/atom/discover_atom/31.png"></figure>
